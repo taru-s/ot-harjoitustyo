@@ -1,0 +1,105 @@
+commit bfcd52711f804c4ef38a6287e8fecd7c84349406
+Author: taru-s <taru.saarelainen@helsinki.fi>
+Date:   Fri Mar 18 14:11:02 2022 +0200
+
+    muokattu tiedostoja hakemiston tiedostoja
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 167c5842efc040eb90ed5c68e36924623c841a6f
+Author: taru-s <taru.saarelainen@helsinki.fi>
+Date:   Fri Mar 18 14:05:51 2022 +0200
+
+    lisätty tiedostoja hakemisto ja sinne tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 8097da5f238349c568e9e2c5b0b9850ce61233c3
+Author: taru-s <taru.saarelainen@helsinki.fi>
+Date:   Fri Mar 18 13:58:41 2022 +0200
+
+    muokattu eka.txt ja kolmas.txt
+
+ eka.txt    | 4 ++--
+ kolmas.txt | 3 +++
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+
+commit 75098d6fab9b9921793aca86b8247be88860a0c4
+Author: taru-s <taru.saarelainen@helsinki.fi>
+Date:   Fri Mar 18 13:54:14 2022 +0200
+
+    uudelleennimentä tiedosto.txt -> eka.txt
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit ef3251b2e1636b374649c3933cd245cb1b0f1f12
+Author: taru-s <taru.saarelainen@helsinki.fi>
+Date:   Fri Mar 18 13:52:34 2022 +0200
+
+    poistettu tiedosto toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit b7eb79dbdc759ceed6f8e64e5753674c34b0ef5b
+Author: taru-s <taru.saarelainen@helsinki.fi>
+Date:   Fri Mar 18 13:49:55 2022 +0200
+
+    muokattu tiedostoa tiedosto.txt
+
+ tiedosto.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 09e882e0dfa05a44c4e0633db76dea672bb759ff
+Author: taru-s <taru.saarelainen@helsinki.fi>
+Date:   Fri Mar 18 13:47:51 2022 +0200
+
+    lisätty tekstiä tiedostoon tiedosto.txt
+
+ tiedosto.txt | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+commit 312197602e904257768bb8857e3da1d2c32c784b
+Author: taru-s <taru.saarelainen@helsinki.fi>
+Date:   Fri Mar 18 13:42:32 2022 +0200
+
+    lisätty hakemisto stuff ja siihen tiedosto 'jokin-tiedosto.txt'. muokattu tiedostoja kolmas.txt ja toinen.txt
+
+ kolmas.txt               | 1 +
+ stuff/jokin-tiedosto.txt | 0
+ toinen.txt               | 1 +
+ 3 files changed, 2 insertions(+)
+
+commit be37a8b2c3f03ad659bf4c924a0d0632e861ab2b
+Author: taru-s <taru.saarelainen@helsinki.fi>
+Date:   Fri Mar 18 13:39:04 2022 +0200
+
+    uusi tiedosto
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit cd8a7a259c5e5738f5550e51a6f814958bd4645f
+Author: taru-s <taru.saarelainen@helsinki.fi>
+Date:   Fri Mar 18 13:35:12 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 2 ++
+ toinen.txt   | 0
+ 2 files changed, 2 insertions(+)
+
+commit 636ca212566fa60c15df08790eb8d270a91bd23d
+Author: taru-s <taru.saarelainen@helsinki.fi>
+Date:   Fri Mar 18 13:29:37 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)

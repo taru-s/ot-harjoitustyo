@@ -1,4 +1,4 @@
-#READ ME
+# READ ME
 
 This is a **READ ME** file. It is *the first* file in this repository.
 
@@ -13,3 +13,6 @@ it is important,
 that I practice the notation
 in practice
 ```
+
+[gitlog.txt](https://github.com/taru-s/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+[komentorivi.txt](https://github.com/taru-s/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)

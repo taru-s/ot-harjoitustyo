@@ -19,7 +19,7 @@ class Kassapaate:
             return maksu - 400
         else:
             return maksu
-
+ 
     def syo_edullisesti_kortilla(self, kortti):
         if kortti.saldo >= 240:
             kortti.ota_rahaa(240)

@@ -8,15 +8,19 @@ Multiple users can use the application on the same machine by providing unique u
 ## Basic functionalities:
 
 ### before logging in, a user can:
-- create a user name
+- create a new user name
+  - has to be unique  
 - log in by providing an existing username
   - if the username provided does not exist, user is prompted to try again or create a bew one
      
 
 ### while logged in, a user can:
-- register new fabrics to the stash
-- view the registered fabrics
-- edit information of registered fabrics
+- view the registered fabrics as a list
+  - view the information of a registered fabric
+- register new fabrics to the stash 
+- edit the information of registered fabrics
+- log out and return to the login screen
+
 
 ### additional functionality:
 

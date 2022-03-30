@@ -9,6 +9,27 @@
       Pelinappula "1" -- "1" Pelaaja
       Ruutu ..> "1" Ruutu
       Pelinappula ..> Ruutu
+      Ruutu -- Toiminto
+      Kortti -- Toiminto
+      
+      Ruutu <|-- Aloitusruutu
+      Ruutu <|-- Vankila
+      Ruutu <|-- Sattuma
+      Ruutu <|-- Yhteismaa
+      Ruutu <|-- Asema
+      Ruutu <|-- Laitos
+      Ruutu <|-- Katu
+      
+      Sattuma -- "*" Kortti
+      Yhteismaa -- "*" Kortti
+      
+      Katu -- Nimi
+      Katu .. "1" Pelaaja
+      Katu "1" -- "0..4" Talo
+      Katu "1" -- "0..1" Hotelli
+      
+      Rakennus <|-- Talo
+      Rakennus <|-- Hotelli
       
       class Monopoli{
       }
@@ -17,18 +38,47 @@
       }
       
       class Pelaaja{
+       Pelinappula pelinappula
+      }
+      
+      class Pelinappula{
+        Ruutu sijainti
       }
       
       class Pelilauta{
+      }
+      
+      class Kortti{
+      }
+      
+      class Rakennus{
+      }
+      
+      class Talo{
+      }
+      
+      class Hotelli{
       }
       
       class Ruutu{
         Ruutu seuraava
       }
       
-      class Pelinappula{
-        Ruutu sijainti
+      class Aloitusruutu{
       }
+      
+      class Katu{
+       Nimi kadunnimi
+      }
+      
+      class Nimi{
+      }
+      
+      class Toiminto{
+      }
+      
+      
+      
       
       
 ```

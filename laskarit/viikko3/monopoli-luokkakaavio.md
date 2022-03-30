@@ -1,6 +1,7 @@
  
  ```mermaid
  classDiagram
+      direction RL
  
       Noppa "2" -- "1" Monopoli
       Pelaaja "2..8" -- "1" Monopoli
@@ -11,6 +12,8 @@
       Pelinappula ..> Ruutu
       Ruutu -- Toiminto
       Kortti -- Toiminto
+      Raha "*" -- Monopoli
+      Raha "*" -- Pelaaja
       
       Ruutu <|-- Aloitusruutu
       Ruutu <|-- Vankila
@@ -20,11 +23,14 @@
       Ruutu <|-- Laitos
       Ruutu <|-- Katu
       
+      Monopoli ..> Aloitusruutu
+      Monopoli ..> Vankila
+      
       Sattuma -- "*" Kortti
       Yhteismaa -- "*" Kortti
       
-      Katu -- Nimi
-      Katu .. "1" Pelaaja
+      Katu --> Nimi
+      Katu "0..*" -- "1" Pelaaja
       Katu "1" -- "0..4" Talo
       Katu "1" -- "0..1" Hotelli
       
@@ -58,6 +64,9 @@
       }
       
       class Hotelli{
+      }
+      
+      class Raha{
       }
       
       class Ruutu{

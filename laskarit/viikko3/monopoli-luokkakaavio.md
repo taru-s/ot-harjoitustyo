@@ -10,10 +10,13 @@
       Pelinappula "1" -- "1" Pelaaja
       Ruutu ..> "1" Ruutu
       Pelinappula ..> Ruutu
-      Ruutu -- Toiminto
-      Kortti -- Toiminto
       Raha "*" -- Monopoli
       Raha "*" -- Pelaaja
+      Ruutu -- Toiminto
+      Kortti -- Toiminto
+      Toiminto <|-- Toiminto1
+      Toiminto <|-- Toiminto2
+      Toiminto <|-- Toiminto3
       
       Ruutu <|-- Aloitusruutu
       Ruutu <|-- Vankila

@@ -1,9 +1,8 @@
 import unittest
-from services.fabric_service import FabricService
+from entities.fabric import Fabric
 
 class TestFabricService(unittest.TestCase):
     def setUp(self) -> None:
-        self.service = FabricService()
 
     def test_added_fabric_returned(self):
         self.service.add_fabric("name", 100, 100, False)

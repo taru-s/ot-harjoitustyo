@@ -8,7 +8,7 @@ class TextUI:
     def start(self):
         print("Fabric stash manager")
         while True:
-            print("commands:\nx - exit\nadd - add new fabric\nlist - list all fabrics")
+            print("\ncommands:\nx - exit\nadd - add new fabric\nlist - list all fabrics")
             user_input = input(" > ")
 
 

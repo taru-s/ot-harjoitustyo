@@ -6,4 +6,9 @@ class Fabric:
         self.washed = washed
 
     def __str__(self) -> str:
-        return f"{self.name}, {self.width}cm x {self.length}cm"
+        if self.washed:
+            washed = "yes"
+        else:
+            washed = "no"
+
+        return f"{self.name}, {self.width}cm x {self.length}cm, washed: {washed}"

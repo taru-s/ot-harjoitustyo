@@ -1,8 +1,8 @@
-from repositories import fabric_repository
+from repositories.fabric_repository import FabricRepository
 
 class FabricService:
     def __init__(self) -> None:
-        self._repository = fabric_repository.FabricRepository()
+        self._repository = FabricRepository()
 
     def add_fabric(self, name, width, length, washed):
         self._repository.add_fabric(name, width, length, washed)
@@ -10,3 +10,7 @@ class FabricService:
     def get_fabrics(self):
         return self._repository.get_all_fabrics()
 
+
+serv = FabricService()
+serv.add_fabric("name", 100, 100, False)
+print(str(serv.get_fabrics()))

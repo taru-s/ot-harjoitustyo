@@ -5,3 +5,5 @@
 
 [työaikakirjanpito](https://github.com/taru-s/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
+[changelog](https://github.com/taru-s/ot-harjoitustyo/blob/master/fabric-stash/dokumentaatio/changelog.md)
+

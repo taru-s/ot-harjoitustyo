@@ -10,7 +10,3 @@ class FabricService:
     def get_fabrics(self):
         return self._repository.get_all_fabrics()
 
-
-serv = FabricService()
-serv.add_fabric("name", 100, 100, False)
-print(str(serv.get_fabrics()))

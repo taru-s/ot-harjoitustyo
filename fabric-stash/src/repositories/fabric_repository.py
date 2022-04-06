@@ -11,5 +11,3 @@ class FabricRepository:
 
     def get_all_fabrics(self):
         return [str(f) for f in self._fabrics.values()]
-
-

@@ -1,5 +1,6 @@
 from repositories.fabric_repository import FabricRepository
 
+
 class FabricService:
     def __init__(self) -> None:
         self._repository = FabricRepository()

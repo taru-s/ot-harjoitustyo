@@ -4,10 +4,10 @@ from services import fabric_service
 class TextUI:
     def __init__(self) -> None:
         self._service = fabric_service.FabricService()
-        self.commands = {   "x": "exit",
-                            "add": "add new fabric",
-                            "list": "list all fabrics",
-                            "s": "search for fabric by name"}
+        self.commands = {"x": "exit",
+                         "add": "add new fabric",
+                         "list": "list all fabrics",
+                         "s": "search for fabric by name"}
 
     def print_commands(self):
         print("\ncommands: ")
@@ -39,10 +39,10 @@ class TextUI:
         else:
             washed = False
 
-        self._service.add_fabric(name, length, width, washed)
+        self._service.add_fabric(name, width, length, washed)
 
     def _list_fabrics(self):
-        fabrics = self._service.get_fabrics()
+        fabrics = self._service.get_all_fabrics()
         for fabric in fabrics:
             print(fabric)
 

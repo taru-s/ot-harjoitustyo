@@ -18,4 +18,5 @@ def test(ctx):
 
 @task
 def format(ctx):
-    ctx.run
+    ctx.run("autopep8 --in-place --recursive src", pty=True)
+    

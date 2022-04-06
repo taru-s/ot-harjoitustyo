@@ -4,6 +4,6 @@
 | :----:|:-----| :-----|
 | 29.03. | 1    | aiheen valinta, vaatimusmäärittely |
 | 05.04. | 5    | projektin alustaminen ja hakemistorakenteen luominen, toiminnallistuuden toteutuksen aloitus, ensimmäisten testien kirjoittaminen|
-| 06.04. |1| haku nimen perusteella, testejä, refaktorointia|
-| yht.|6| |
+| 06.04. |2| haku nimen perusteella, testejä, refaktorointia|
+| yht.|8| |
 

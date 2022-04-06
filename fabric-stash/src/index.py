@@ -1,4 +1,4 @@
-from ui import text_ui
+from ui.text_ui import TextUI
 
-ui = text_ui.TextUI()
-ui.start()
+UI = TextUI()
+UI.start()

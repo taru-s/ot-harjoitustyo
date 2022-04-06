@@ -11,7 +11,6 @@ class TextUI:
             print("\ncommands:\nx - exit\nadd - add new fabric\nlist - list all fabrics")
             user_input = input(" > ")
 
-
             if user_input == "x":
                 break
             elif user_input == "add":

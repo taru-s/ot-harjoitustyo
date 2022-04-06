@@ -9,4 +9,3 @@ class FabricService:
 
     def get_fabrics(self):
         return self._repository.get_all_fabrics()
-

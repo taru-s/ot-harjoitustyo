@@ -2,7 +2,7 @@ import unittest
 from entities.fabric import Fabric
 
 
-class TestFabricService(unittest.TestCase):
+class TestFabric(unittest.TestCase):
     def setUp(self) -> None:
         pass
 

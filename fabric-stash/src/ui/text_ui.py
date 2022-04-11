@@ -7,7 +7,8 @@ class TextUI:
         self.commands = {"x": "exit",
                          "a": "add new fabric",
                          "l": "list all fabrics",
-                         "s": "search for fabric by name"}
+                         "s": "search for fabric by name",
+                         "da": "delete all"}
 
     def print_commands(self):
         print("\ncommands: ")
@@ -28,6 +29,8 @@ class TextUI:
                 self._list_fabrics()
             elif user_input == "s":
                 self._search_by_name()
+            elif user_input == "da":
+                self._delete_all()
 
     def _add_fabric(self):
         name = input("give fabric name: ")
@@ -46,8 +49,11 @@ class TextUI:
 
     def _list_fabrics(self):
         fabrics = self._service.get_all_fabrics()
-        for fabric in fabrics:
-            print(fabric)
+        if not fabrics:
+            print("No fabrics found")
+        else:
+            for fabric in fabrics:
+                print(fabric)
 
     def _search_by_name(self):
         name = input("give fabric name: ")
@@ -56,3 +62,8 @@ class TextUI:
             print(fabric_found)
         else:
             print("no fabric found with the name provided")
+
+    def _delete_all(self):
+        user_confirmation = input("confirm deletion with 'Y'")
+        if user_confirmation == "Y":
+            self._service.delete_all()

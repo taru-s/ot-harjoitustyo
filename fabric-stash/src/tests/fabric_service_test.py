@@ -1,10 +1,11 @@
 import unittest
 from services.fabric_service import FabricService
-
+from repositories import fabric_repository
 
 class TestFabricService(unittest.TestCase):
     def setUp(self) -> None:
         self.service = FabricService()
+        self.service.delete_all()
         self.service.add_fabric("name", 100, 100, False)
 
     def test_added_fabric_returned(self):

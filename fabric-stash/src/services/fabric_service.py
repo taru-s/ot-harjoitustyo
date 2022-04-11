@@ -1,7 +1,6 @@
 from repositories.fabric_repository import FabricRepository
 from entities.fabric import Fabric
 from database_connection import get_database_connection
-from initialize_database import initialize_database
 
 
 class FabricService:
@@ -19,4 +18,10 @@ class FabricService:
         return self._repository.get_all_fabrics()
 
     def get_fabric_by_name(self, name):
-        return self._repository.get_fabric_by_name(name)
+        fabrics = self._repository.get_fabric_by_name(name)
+        if not fabrics:
+            return False
+        return fabrics
+
+    def delete_all(self):
+        self._repository.delete_all()

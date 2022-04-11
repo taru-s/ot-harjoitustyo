@@ -1,13 +1,11 @@
-
 from entities.fabric import Fabric
-
 
 class FabricRepository:
     def __init__(self) -> None:
         self._fabrics = {}
 
-    def add_fabric(self, name: str, width=0, length=0, washed=False):
-        self._fabrics[str(name)] = Fabric(str(name), width, length, washed)
+    def add_fabric(self, fabric:Fabric):
+        self._fabrics[fabric.name] = fabric
 
     def get_all_fabrics(self):
         return [str(f) for f in self._fabrics.values()]

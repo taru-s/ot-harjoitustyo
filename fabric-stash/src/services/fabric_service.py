@@ -1,9 +1,12 @@
 from repositories.fabric_repository import FabricRepository
 from entities.fabric import Fabric
+from database_connection import get_database_connection
+from initialize_database import initialize_database
+
 
 class FabricService:
     def __init__(self) -> None:
-        self._repository = FabricRepository()
+        self._repository = FabricRepository(get_database_connection())
 
     def add_fabric(self, name, width, length, washed):
         fabric = Fabric(name, width, length, washed)

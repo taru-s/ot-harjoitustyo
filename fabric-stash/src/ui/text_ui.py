@@ -5,8 +5,8 @@ class TextUI:
     def __init__(self) -> None:
         self._service = fabric_service.FabricService()
         self.commands = {"x": "exit",
-                         "add": "add new fabric",
-                         "list": "list all fabrics",
+                         "a": "add new fabric",
+                         "l": "list all fabrics",
                          "s": "search for fabric by name"}
 
     def print_commands(self):
@@ -22,9 +22,9 @@ class TextUI:
 
             if user_input == "x":
                 break
-            elif user_input == "add":
+            elif user_input == "a":
                 self._add_fabric()
-            elif user_input == "list":
+            elif user_input == "l":
                 self._list_fabrics()
             elif user_input == "s":
                 self._search_by_name()
@@ -35,11 +35,14 @@ class TextUI:
         length = input("give fabric length in cm: ")
         washed_str = input("is fabric washed? y/n ")
         if washed_str == "y":
-            washed = True
+            washed = 1
         else:
-            washed = False
+            washed = 0
 
-        self._service.add_fabric(name, width, length, washed)
+        if self._service.add_fabric(name, width, length, washed):
+            print("fabric added succesfully")
+        else:
+            print("fabric not added")
 
     def _list_fabrics(self):
         fabrics = self._service.get_all_fabrics()

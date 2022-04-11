@@ -1,14 +1,43 @@
 class Fabric:
-    def __init__(self, name, width=0, length=0, washed=False) -> None:
-        self.name = name
-        self.width = width
-        self.length = length
-        self.washed = washed
+    def __init__(self, name, width=0, length=0, washed=0) -> None:
+        self._name = name
+        self._width = width
+        self._length = length
+        self._washed = washed
 
     def __str__(self) -> str:
-        if self.washed:
+        if self.washed == 1:
             washed = "yes"
         else:
             washed = "no"
 
         return f"{self.name}, {self.width}cm x {self.length}cm, washed: {washed}"
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        self._name = name
+
+    @property
+    def width(self):
+        return self._width
+    
+    @property
+    def length(self):
+        return self._length
+
+    @property
+    def washed(self):
+        return self._washed
+
+    @washed.setter
+    def washed(self, washed):
+        if washed == 1 or washed == 0:
+            self._washed = washed
+
+    def get_values(self):
+        values = [self.name, self.width, self.length, self.washed]
+        return values

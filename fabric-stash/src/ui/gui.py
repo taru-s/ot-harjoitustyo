@@ -1,5 +1,5 @@
 # tkinter testailuja
-# 
+#
 #  from tkinter import Tk, ttk
 
 # class UI:

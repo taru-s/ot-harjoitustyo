@@ -1,5 +1,4 @@
 from entities.fabric import Fabric
-from initialize_database import initialize_database
 from database_connection import get_database_connection
 
 
@@ -19,8 +18,6 @@ from database_connection import get_database_connection
 #         return False
 
 
-def get_fabric_by_row(row):
-    return Fabric(row['name'], row['width'], row['length'], row['washed']) if row else None
 
 class FabricRepository:
     def __init__(self, connection):
@@ -36,22 +33,22 @@ class FabricRepository:
     def get_fabric_by_name(self, name):
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM Fabrics WHERE name = ?", [name])
-        row = cursor.fetchone()
+        rows = cursor.fetchall()
 
-        return get_fabric_by_row(row)
+        return [str(Fabric(row["name"], row["width"], row["length"], row["washed"])) for row in rows]
 
-
-    def add_fabric(self, fabric:Fabric):
+    def add_fabric(self, fabric: Fabric):
         cursor = self._connection.cursor()
         values = fabric.get_values()
-        cursor.execute("INSERT INTO Fabrics (name, width, length, washed) VALUES (?,?,?,?)", values)
+        cursor.execute(
+            "INSERT INTO Fabrics (name, width, length, washed) VALUES (?,?,?,?)", values)
         self._connection.commit()
 
     def delete_all(self):
         cursor = self._connection.cursor()
         cursor.execute('DELETE FROM Fabrics')
         self._connection.commit()
-    
+
 
 fabric_repository = FabricRepository(get_database_connection())
 # fabric_repository.add_fabric(Fabric("testi", 100, 200, 0))

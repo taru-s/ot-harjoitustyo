@@ -18,7 +18,7 @@ class FabricService:
         # #     return False
         # if width < 1 or length < 1:
         #     return False
-        
+
         fabric = Fabric(str(name), width, length, washed)
         self._repository.add_fabric(fabric)
         return True

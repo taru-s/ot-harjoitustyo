@@ -47,7 +47,7 @@ class TextUI:
         else:
             print("fabric not added (invalid inputs)")
 
-    def _ask_fabric_dimension(self, dim_type:str):
+    def _ask_fabric_dimension(self, dim_type: str):
         dimension_name = dim_type
         try:
             dimension = int(input(f"give fabric {dimension_name} in cm: "))
@@ -56,7 +56,6 @@ class TextUI:
             dimension = self._ask_fabric_dimension(dimension_name)
 
         return dimension
-
 
     def _list_fabrics(self):
         fabrics = self._service.get_all_fabrics()
@@ -70,7 +69,8 @@ class TextUI:
         name = input("give fabric name: ")
         fabrics_found = self._service.get_fabrics_by_name(name)
         if fabrics_found:
-            print(fabrics_found)
+            for fabric in fabrics_found:
+                print(fabric)
         else:
             print("no fabric found with the name provided")
 

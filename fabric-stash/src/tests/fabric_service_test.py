@@ -1,6 +1,7 @@
 import unittest
 from services.fabric_service import FabricService
 
+
 class TestFabricService(unittest.TestCase):
     def setUp(self) -> None:
         self.service = FabricService()

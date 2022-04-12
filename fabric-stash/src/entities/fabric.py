@@ -45,7 +45,7 @@ class Fabric:
 
     @washed.setter
     def washed(self, washed):
-        if washed == 1 or washed == 0:
+        if washed in (1, 0):
             self._washed = washed
 
     def get_values(self):

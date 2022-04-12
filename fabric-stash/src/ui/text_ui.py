@@ -51,7 +51,7 @@ class TextUI:
         dimension_name = dim_type
         try:
             dimension = int(input(f"give fabric {dimension_name} in cm: "))
-        except:
+        except ValueError:
             print("input given not an integer")
             dimension = self._ask_fabric_dimension(dimension_name)
 

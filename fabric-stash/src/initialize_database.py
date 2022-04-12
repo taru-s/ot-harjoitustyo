@@ -29,10 +29,9 @@ def create_tables(connection):
 
 def initialize_database():
     connection = get_database_connection()
-
     drop_tables(connection)
     create_tables(connection)
 
 
-if __name__ == "__main__":
-    initialize_database()
+# if __name__ == "__main__":
+#     initialize_database()

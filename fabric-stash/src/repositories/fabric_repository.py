@@ -1,5 +1,5 @@
 from entities.fabric import Fabric
-from database_connection import get_database_connection
+# from database_connection import get_database_connection
 
 
 # class FabricRepository:
@@ -50,6 +50,6 @@ class FabricRepository:
         self._connection.commit()
 
 
-fabric_repository = FabricRepository(get_database_connection())
+# FABRIC_REPOSITORY = FabricRepository(get_database_connection())
 # fabric_repository.add_fabric(Fabric("testi", 100, 200, 0))
 # print(fabric_repository.get_all_fabrics())

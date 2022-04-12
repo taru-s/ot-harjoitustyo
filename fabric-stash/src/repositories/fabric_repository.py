@@ -13,6 +13,9 @@ class FabricRepository:
         return [Fabric(row["name"], row["width"], row["length"],
                        row["washed"]) for row in rows]
 
+    def get_fabric_by_property(self, property_name, property_state):
+        pass
+
     def get_fabric_by_name(self, name):
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM Fabrics WHERE name = ?", [name])

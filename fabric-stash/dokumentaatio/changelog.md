@@ -4,3 +4,8 @@
 - user can add fabrics
 - user can view all added fabrics
 - tests for correctly adding and returning fabrics
+
+### Viikko 4
+ - user can search for fabrics by name
+ - fabrics information stored in database
+ - user can delete all fabrics

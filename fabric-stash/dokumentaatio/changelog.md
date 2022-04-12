@@ -7,5 +7,5 @@
 
 ### Viikko 4
  - user can search for fabrics by name
- - fabrics information stored in database
+ - fabrics information stored in database, refactoring
  - user can delete all fabrics

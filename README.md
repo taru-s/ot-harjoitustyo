@@ -7,3 +7,5 @@
 
 [changelog](https://github.com/taru-s/ot-harjoitustyo/blob/master/fabric-stash/dokumentaatio/changelog.md)
 
+[arkkitehtuurikuvaus](https://github.com/taru-s/ot-harjoitustyo/blob/master/fabric-stash/dokumentaatio/arkkitehtuuri.md)
+

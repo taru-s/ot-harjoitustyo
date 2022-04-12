@@ -24,10 +24,20 @@ class Fabric:
     @property
     def width(self):
         return self._width
+
+    @width.setter
+    def width(self, width:int):
+        if type(width) == int:
+            self._width = width
     
     @property
     def length(self):
         return self._length
+
+    @length.setter
+    def length(self, length:int):
+        if type(length) == int:
+            self._length = length
 
     @property
     def washed(self):

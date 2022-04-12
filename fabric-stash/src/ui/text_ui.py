@@ -34,8 +34,8 @@ class TextUI:
 
     def _add_fabric(self):
         name = input("give fabric name: ")
-        width = input("give fabric width in cm: ")
-        length = input("give fabric length in cm: ")
+        width = self._ask_fabric_dimension("width")
+        length = self._ask_fabric_dimension("length")
         washed_str = input("is fabric washed? y/n ")
         if washed_str == "y":
             washed = 1
@@ -45,7 +45,18 @@ class TextUI:
         if self._service.add_fabric(name, width, length, washed):
             print("fabric added succesfully")
         else:
-            print("fabric not added")
+            print("fabric not added (invalid inputs)")
+
+    def _ask_fabric_dimension(self, dim_type:str):
+        dimension_name = dim_type
+        try:
+            dimension = int(input(f"give fabric {dimension_name} in cm: "))
+        except:
+            print("input given not an integer")
+            dimension = self._ask_fabric_dimension(dimension_name)
+
+        return dimension
+
 
     def _list_fabrics(self):
         fabrics = self._service.get_all_fabrics()
@@ -57,9 +68,9 @@ class TextUI:
 
     def _search_by_name(self):
         name = input("give fabric name: ")
-        fabric_found = self._service.get_fabric_by_name(name)
-        if fabric_found:
-            print(fabric_found)
+        fabrics_found = self._service.get_fabrics_by_name(name)
+        if fabrics_found:
+            print(fabrics_found)
         else:
             print("no fabric found with the name provided")
 

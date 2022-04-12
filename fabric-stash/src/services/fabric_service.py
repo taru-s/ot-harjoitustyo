@@ -8,8 +8,20 @@ class FabricService:
         self._repository = FabricRepository(get_database_connection())
 
     def add_fabric(self, name, width, length, washed):
-        fabric = Fabric(name, width, length, washed)
+        # if not name:
+        #     return False
+        # try:
+        #     int(width)
+        # except:
+        #     return False
+        # # if type(width) != int:
+        # #     return False
+        # if width < 1 or length < 1:
+        #     return False
+        
+        fabric = Fabric(str(name), width, length, washed)
         self._repository.add_fabric(fabric)
+        return True
 
     def edit_fabric(self, name):
         pass
@@ -17,7 +29,7 @@ class FabricService:
     def get_all_fabrics(self):
         return self._repository.get_all_fabrics()
 
-    def get_fabric_by_name(self, name):
+    def get_fabrics_by_name(self, name):
         fabrics = self._repository.get_fabric_by_name(name)
         if not fabrics:
             return False

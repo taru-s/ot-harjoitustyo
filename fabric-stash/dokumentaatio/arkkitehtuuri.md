@@ -1,4 +1,4 @@
-Ohjelman luokkakaavion tämänhetkinen rakenne
+Ohjelman luokien tämänhetkinen rakenne
 
 ```mermaid
  classDiagram

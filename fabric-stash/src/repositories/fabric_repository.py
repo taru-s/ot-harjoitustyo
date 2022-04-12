@@ -28,14 +28,14 @@ class FabricRepository:
         cursor.execute("select * from Fabrics")
         rows = cursor.fetchall()
 
-        return [str(Fabric(row["name"], row["width"], row["length"], row["washed"])) for row in rows]
+        return [Fabric(row["name"], row["width"], row["length"], row["washed"]) for row in rows]
 
     def get_fabric_by_name(self, name):
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM Fabrics WHERE name = ?", [name])
         rows = cursor.fetchall()
 
-        return [str(Fabric(row["name"], row["width"], row["length"], row["washed"])) for row in rows]
+        return [Fabric(row["name"], row["width"], row["length"], row["washed"]) for row in rows]
 
     def add_fabric(self, fabric: Fabric):
         cursor = self._connection.cursor()

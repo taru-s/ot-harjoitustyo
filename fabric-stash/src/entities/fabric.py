@@ -27,7 +27,7 @@ class Fabric:
 
     @width.setter
     def width(self, width: int):
-        if type(width) == int:
+        if isinstance(width, int):
             self._width = width
 
     @property
@@ -36,7 +36,7 @@ class Fabric:
 
     @length.setter
     def length(self, length: int):
-        if type(length) == int:
+        if isinstance(length, int):
             self._length = length
 
     @property

@@ -5,11 +5,13 @@ from tkinter import constants
 from services.fabric_service import FabricService
 
 class FabricListView:
-    def __init__(self, root, handle_add, handle_search, handle_logout):
+    def __init__(self, root, handle_add, handle_search, handle_logout,
+                 handle_show_fabric):
         self._root = root
         self._handle_add = handle_add
         self._handle_search = handle_search
         self._handle_logout = handle_logout
+        self._handle_show_fabric = handle_show_fabric
         self._frame = None
 
         self._service = FabricService()
@@ -29,7 +31,7 @@ class FabricListView:
         label_header.grid(row=0)
 
         fabric_list = self._fabric_frame(self._root)
-        fabric_list.grid(row=2)
+        fabric_list.grid(row=2, sticky=tk.EW)
 
         buttons = self._button_frame(self._root)
         buttons.grid(row=10)
@@ -52,7 +54,8 @@ class FabricListView:
             for fabric in fabrics:
                 fabric_button = ttk.Button(
                     frame,
-                    text= fabric.name
+                    text=str(fabric),
+                    command=self._handle_show_fabric
                 )
 
                 fabric_buttons.append(fabric_button)

@@ -3,11 +3,11 @@ from ui.gui import GUI
 from tkinter import Tk
 
 
-def main(mode="gui"):
-    if mode=="text":
+def main(mode="g"):
+    if mode=="t":
         ui = TextUI()
         ui.start()
-    elif mode=="gui":
+    elif mode=="g":
         window = Tk()
         window.title("Fabric stash")
 
@@ -16,4 +16,7 @@ def main(mode="gui"):
 
         window.mainloop()
 
-main("text")
+input_mode = input("g - gui\nt- text ui\n")
+if input_mode not in ('g', 't'):
+    input_mode="t"
+main(input_mode)

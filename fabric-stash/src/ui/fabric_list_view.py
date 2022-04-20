@@ -54,7 +54,7 @@ class FabricListView:
 
                 fabric_buttons.append(fabric_button)
 
-        for i in len(fabric_buttons):
+        for i in range(len(fabric_buttons)):
             fabric_buttons[i].grid(column=i)
 
         return frame

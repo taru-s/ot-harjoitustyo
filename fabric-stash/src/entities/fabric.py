@@ -17,7 +17,7 @@ class Fabric:
         properties_and_types= {
             "name":str,
             "width":int,
-            "length":int
+            "length":int,
             "washed":bool
         }
         return properties_and_types

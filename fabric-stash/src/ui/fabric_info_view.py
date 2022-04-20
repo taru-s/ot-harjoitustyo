@@ -31,8 +31,18 @@ class FabricInfoView():
         buttons = self._button_frame(self._root)
         buttons.grid(row=10)
 
-    def _fabric_info_frame(self, container): 
+    def _fabric_info_frame(self, container):
         frame = ttk.Frame(container, padding=3)
+
+        property_fields = []
+        property_fields.append(ttk.Label(frame, text=str(self._fabric)))
+                
+        for prop in Fabric.fabric_properties():
+            label = ttk.Label(frame, text=prop)
+            property_fields.append(label)
+
+        for i in range(len(property_fields)):
+            property_fields[i].grid(row=i)
 
         return frame
 

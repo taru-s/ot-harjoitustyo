@@ -31,8 +31,17 @@ class FabricEditView():
         buttons = self._button_frame(self._root)
         buttons.grid(row=10)
 
-    def _fabric_info_frame(self, container): 
+    def _fabric_info_frame(self, container):
         frame = ttk.Frame(container, padding=3)
+
+        property_fields = []
+        
+        for prop, type in Fabric.fabric_properties():
+            label = ttk.Label(frame, text=prop)
+            if type == str:
+                pass
+                
+
 
         return frame
 

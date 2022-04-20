@@ -17,11 +17,15 @@ class UI:
     def _handle_search(self):
         print("search")
 
+    def _handle_logout(self):
+        print("logged out")
+
     def _show_fabric_list_view(self):
         self._current_view = FabricListView(
             self._root, 
             self._handle_add_fabric, 
-            self._handle_search
+            self._handle_search,
+            self._handle_logout
         )
 
         self._current_view.pack()

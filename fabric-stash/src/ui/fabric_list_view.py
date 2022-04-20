@@ -55,7 +55,7 @@ class FabricListView:
                 fabric_button = ttk.Button(
                     frame,
                     text=str(fabric),
-                    command= lambda: self._handle_show_fabric(fabric)
+                    command= self._handle_show_fabric
                 )
 
                 fabric_buttons.append(fabric_button)

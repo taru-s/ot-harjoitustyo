@@ -41,5 +41,5 @@ Multiple users can use the application on the same machine by providing unique u
 
 ## User Interface sketch
 
-![UI sketch of the fabric stash manager application's basic functionality](/dokumentaatio/kuvat/user-interface-sketch.png)
+![UI sketch of the fabric stash manager application's basic functionality](https://github.com/taru-s/ot-harjoitustyo/blob/master/fabric-stash/dokumentaatio/kuvat/user-interface-sketch.png)
 

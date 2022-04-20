@@ -7,5 +7,6 @@
 | 06.04. |2| haku nimen perusteella, testejä, refaktorointia|
 | 11.04. |5| tallennus tietokantaan, kaikkien tallennettujen poisto |
 | 12.04. |1| käyttäjän syötteen validointi, refaktorointia|
-| yht.|14| |
+| 20.04. |4| graafinen käyttölittyymä |
+| yht.|18| |
 

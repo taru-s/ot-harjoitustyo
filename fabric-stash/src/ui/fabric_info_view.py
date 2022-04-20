@@ -25,40 +25,16 @@ class FabricInfoView():
         label_header = ttk.Label(master=self._frame, text=self._fabric.name, anchor=tk.N)
         label_header.grid(row=0)
 
-        # fabric_list = self._fabric_frame(self._root)
-        # fabric_list.grid(row=2, sticky=tk.EW)
+        fabric_info = self._fabric_info_frame(self._root)
+        fabric_info.grid(row=2, sticky=tk.EW)
 
         buttons = self._button_frame(self._root)
         buttons.grid(row=10)
 
-    # def _fabric_frame(self, container): 
-    #     frame = ttk.Frame(container, padding=3)
+    def _fabric_info_frame(self, container): 
+        frame = ttk.Frame(container, padding=3)
 
-    #     fabrics = self._service.get_all_fabrics()
-    #     fabric_buttons = []
-
-    #     if not fabrics:
-    #         no_fabrics_button = ttk.Button(
-    #             frame,
-    #             text="no fabrics, add new",
-    #             command=self._handle_add
-    #         )
-
-    #         fabric_buttons.append(no_fabrics_button)
-    #     else:
-    #         for fabric in fabrics:
-    #             fabric_button = ttk.Button(
-    #                 frame,
-    #                 text=str(fabric),
-    #                 command=self._handle_show_fabric
-    #             )
-
-    #             fabric_buttons.append(fabric_button)
-
-    #     for i in range(len(fabric_buttons)):
-    #         fabric_buttons[i].grid(row=i)
-
-    #     return frame
+        return frame
 
     def _button_frame(self, container):
         frame = ttk.Frame(container, padding=3)
@@ -79,7 +55,7 @@ class FabricInfoView():
 
         button_list = ttk.Button(
             frame,
-            text="back",
+            text="list",
             command=self._handle_back
         )
         button_list.grid(row=0, column=3, padx=4)

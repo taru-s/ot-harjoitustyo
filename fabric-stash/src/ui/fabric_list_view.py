@@ -28,6 +28,9 @@ class FabricListView:
         label_header = ttk.Label(master=self._frame, text="Fabric list", anchor=tk.N)
         label_header.grid(row=0)
 
+        fabric_list = self._fabric_frame(self._root)
+        fabric_list.grid(row=2)
+
         buttons = self._button_frame(self._root)
         buttons.grid(row=10)
 
@@ -55,7 +58,7 @@ class FabricListView:
                 fabric_buttons.append(fabric_button)
 
         for i in range(len(fabric_buttons)):
-            fabric_buttons[i].grid(column=i)
+            fabric_buttons[i].grid(row=i)
 
         return frame
 

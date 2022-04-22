@@ -34,10 +34,16 @@ class FabricInfoView():
     def _fabric_info_frame(self, container):
         frame = ttk.Frame(container, padding=3)
 
+        property_names = list(Fabric.fabric_properties().keys())
+        fabric_values = self._fabric.get_values()
+        properties = []
+
+        for i in range(len(property_names)):
+            properties.append(f"{property_names[i]}: {fabric_values[i]}")
+
         property_fields = []
-        property_fields.append(ttk.Label(frame, text=str(self._fabric)))
                 
-        for prop in Fabric.fabric_properties():
+        for prop in properties:
             label = ttk.Label(frame, text=prop)
             property_fields.append(label)
 

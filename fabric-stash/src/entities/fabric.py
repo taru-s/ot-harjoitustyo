@@ -13,7 +13,7 @@ class Fabric:
 
         return f"{self.name}, {self.width}cm x {self.length}cm, washed: {washed}"
 
-    def fabric_properties():
+    def fabric_properties_and_types(self):
         properties_and_types= {
             "name":str,
             "width":int,

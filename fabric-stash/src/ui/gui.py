@@ -73,6 +73,8 @@ class GUI:
             self._handle_info_view_back
         )
 
+        self._current_view.pack()
+
     def _show_fabric_edit_view(self, fabric=Fabric("no fabric",0,0,False)):
         self._hide_current_view()
 
@@ -83,5 +85,7 @@ class GUI:
             self._handle_edit_view_delete,
             self._handle_edit_view_cancel
         )
+
+        self._current_view.pack()
 
         

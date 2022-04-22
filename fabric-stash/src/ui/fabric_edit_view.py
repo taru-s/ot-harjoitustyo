@@ -24,10 +24,10 @@ class FabricEditView():
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
 
-        fabric_info = self._fabric_info_edit_frame(self._root)
+        fabric_info = self._fabric_info_edit_frame(self._frame)
         fabric_info.grid(row=2, sticky=tk.EW)
 
-        buttons = self._button_frame(self._root)
+        buttons = self._button_frame(self._frame)
         buttons.grid(row=10)
 
     def _fabric_info_edit_frame(self, container):

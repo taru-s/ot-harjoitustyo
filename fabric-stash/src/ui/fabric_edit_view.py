@@ -72,7 +72,7 @@ class FabricEditView():
         button_cancel = ttk.Button(
             frame,
             text="cancel",
-            command=self._handle_cancel
+            command=lambda: self._handle_cancel(self._fabric)
         )
         button_cancel.grid(row=0, column=3, padx=4)
         

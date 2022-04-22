@@ -46,8 +46,8 @@ class GUI:
     def _handle_edit_view_delete(self):
         print("delete")
         
-    def _handle_edit_view_cancel(self):
-        print("cancel")
+    def _handle_edit_view_cancel(self, *fabric):
+        self._show_fabric_info_view(fabric[0])
 
     def _show_fabric_list_view(self):
         self._hide_current_view()

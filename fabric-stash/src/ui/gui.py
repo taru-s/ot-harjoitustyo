@@ -19,20 +19,21 @@ class GUI:
         if self._current_view:
             self._current_view.destroy()
 
-    def _handle_add_fabric(self):
+    def _handle_list_view_add_fabric(self):
         print("add")
 
-    def _handle_search(self):
+    def _handle_list_view_search(self):
         print("search")
 
-    def _handle_logout(self):
+    def _handle_list_view_logout(self):
         print("logged out")
 
-    def _handle_show_fabric(self, *fabric):
+    def _handle_list_view_show_fabric(self, *fabric):
         self._show_fabric_info_view(fabric[0])
 
     def _handle_info_view_edit_fabric(self):
         print("edit")
+        self._show_fabric_edit_view()
     
     def _handle_info_view_delete_fabric(self):
         print("delete")
@@ -54,10 +55,10 @@ class GUI:
 
         self._current_view = FabricListView(
             self._root,
-            self._handle_add_fabric, 
-            self._handle_search,
-            self._handle_logout,
-            self._handle_show_fabric
+            self._handle_list_view_add_fabric, 
+            self._handle_list_view_search,
+            self._handle_list_view_logout,
+            self._handle_list_view_show_fabric
         )
 
         self._current_view.pack()
@@ -73,7 +74,7 @@ class GUI:
             self._handle_info_view_back
         )
 
-    def _show_fabric_edit_view(self, fabric):
+    def _show_fabric_edit_view(self, fabric=Fabric("no fabric",0,0,False)):
         self._hide_current_view()
 
         self._current_view = FabricEditView(

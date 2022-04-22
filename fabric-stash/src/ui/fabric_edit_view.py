@@ -34,14 +34,21 @@ class FabricEditView():
     def _fabric_info_frame(self, container):
         frame = ttk.Frame(container, padding=3)
 
-        property_fields = []
-        
-        for prop, type in Fabric.fabric_properties_and_types():
-            label = ttk.Label(frame, text=prop)
-            if type == str:
-                pass
-                
+        property_names = list(Fabric.fabric_properties_and_types().keys())
+        fabric_values = self._fabric.get_values()
+        properties = []
 
+        for i in range(len(property_names)):
+            properties.append(f"{property_names[i]}: {fabric_values[i]} edit")
+
+        property_fields = []
+                
+        for prop in properties:
+            label = ttk.Label(frame, text=prop)
+            property_fields.append(label)
+
+        for i in range(len(property_fields)):
+            property_fields[i].grid(row=i)
 
         return frame
 
@@ -50,7 +57,7 @@ class FabricEditView():
 
         button_save = ttk.Button(
             frame,
-            text="edit",
+            text="save",
             command=self._handle_save
         )
         button_save.grid(row=0, column=0, padx=4)

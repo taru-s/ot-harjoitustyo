@@ -34,7 +34,7 @@ class FabricInfoView():
     def _fabric_info_frame(self, container):
         frame = ttk.Frame(container, padding=3)
 
-        property_names = list(Fabric.fabric_properties().keys())
+        property_names = list(Fabric.fabric_properties_and_types().keys())
         fabric_values = self._fabric.get_values()
         properties = []
 

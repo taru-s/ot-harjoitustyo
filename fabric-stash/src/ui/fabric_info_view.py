@@ -58,7 +58,7 @@ class FabricInfoView():
         button_edit = ttk.Button(
             frame,
             text="edit",
-            command=self._handle_edit
+            command=lambda: self._handle_edit(self._fabric)
         )
         button_edit.grid(row=0, column=0, padx=4)
 

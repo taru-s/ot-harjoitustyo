@@ -31,9 +31,8 @@ class GUI:
     def _handle_list_view_show_fabric(self, *fabric):
         self._show_fabric_info_view(fabric[0])
 
-    def _handle_info_view_edit_fabric(self):
-        print("edit")
-        self._show_fabric_edit_view()
+    def _handle_info_view_edit_fabric(self, *fabric):
+        self._show_fabric_edit_view(fabric[0])
     
     def _handle_info_view_delete_fabric(self):
         print("delete")

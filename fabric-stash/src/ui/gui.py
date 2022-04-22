@@ -28,7 +28,6 @@ class GUI:
         print("logged out")
 
     def _handle_show_fabric(self, *fabric):
-        print("show fabric")
         self._show_fabric_info_view(fabric[0])
 
     def _handle_info_view_edit_fabric(self):

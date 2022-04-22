@@ -27,9 +27,9 @@ class GUI:
     def _handle_logout(self):
         print("logged out")
 
-    def _handle_show_fabric(self):
+    def _handle_show_fabric(self, *fabric):
         print("show fabric")
-        self._show_fabric_info_view()
+        self._show_fabric_info_view(fabric[0])
 
     def _handle_info_view_edit_fabric(self):
         print("edit")
@@ -53,12 +53,12 @@ class GUI:
 
         self._current_view.pack()
     
-    def _show_fabric_info_view(self):
+    def _show_fabric_info_view(self, fabric=Fabric("test",1,1,False)):
         self._hide_current_view()
 
         self._current_view = FabricInfoView(
             self._root,
-            Fabric("test",1,1,False),
+            fabric,
             self._handle_info_view_edit_fabric,
             self._handle_info_view_delete_fabric,
             self._handle_info_view_back

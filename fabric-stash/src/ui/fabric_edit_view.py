@@ -3,7 +3,7 @@ import tkinter.ttk as ttk
 from entities.fabric import Fabric
 
 class FabricEditView():
-    def __init__(self, root, fabric:Fabric,handle_save, handle_delete, handle_cancel):
+    def __init__(self, root, fabric: Fabric, handle_save, handle_delete, handle_cancel):
         self._root = root
         self._fabric = fabric
         self._handle_save = handle_save
@@ -36,7 +36,7 @@ class FabricEditView():
 
         property_fields = []
         
-        for prop, type in Fabric.fabric_properties():
+        for prop, type in Fabric.fabric_properties_and_types():
             label = ttk.Label(frame, text=prop)
             if type == str:
                 pass

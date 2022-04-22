@@ -4,6 +4,7 @@ from tkinter import Tk, ttk, constants
 
 from .fabric_list_view import FabricListView
 from .fabric_info_view import FabricInfoView
+from .fabric_edit_view import FabricEditView
 from entities.fabric import Fabric
 
 class GUI:
@@ -39,6 +40,15 @@ class GUI:
     def _handle_info_view_back(self):
         self._show_fabric_list_view()
 
+    def _handle_edit_view_save(self):
+        print("save")
+
+    def _handle_edit_view_delete(self):
+        print("delete")
+        
+    def _handle_edit_view_cancel(self):
+        print("cancel")
+
     def _show_fabric_list_view(self):
         self._hide_current_view()
 
@@ -52,7 +62,7 @@ class GUI:
 
         self._current_view.pack()
     
-    def _show_fabric_info_view(self, fabric=Fabric("test",1,1,False)):
+    def _show_fabric_info_view(self, fabric=Fabric("no fabric",0,0,False)):
         self._hide_current_view()
 
         self._current_view = FabricInfoView(
@@ -61,6 +71,17 @@ class GUI:
             self._handle_info_view_edit_fabric,
             self._handle_info_view_delete_fabric,
             self._handle_info_view_back
+        )
+
+    def _show_fabric_edit_view(self, fabric):
+        self._hide_current_view()
+
+        self._current_view = FabricEditView(
+            self._root,
+            fabric,
+            self._handle_edit_view_save,
+            self._handle_edit_view_delete,
+            self._handle_edit_view_cancel
         )
 
         

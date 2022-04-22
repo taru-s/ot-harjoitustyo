@@ -52,10 +52,11 @@ class FabricListView:
             fabric_buttons.append(no_fabrics_button)
         else:
             for fabric in fabrics:
+                lam_fabric = fabric
                 fabric_button = ttk.Button(
                     frame,
                     text=str(fabric),
-                    command= lambda: self._handle_show_fabric(fabric)
+                    command= lambda: self._handle_show_fabric(lam_fabric)
                 )
 
                 fabric_buttons.append(fabric_button)

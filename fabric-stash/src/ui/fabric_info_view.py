@@ -17,8 +17,8 @@ class FabricInfoView():
         self._frame.grid(row=0, column=0, padx=2, pady=2)
 
     def destroy(self):
-        for w in self._frame.winfo_children():
-            w.destroy()
+        # for w in self._frame.winfo_children():
+        #     w.destroy()
         self._fabric = None
         self._frame.destroy()
 
@@ -26,11 +26,8 @@ class FabricInfoView():
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
         
-        # label_header = ttk.Label(master=self._root, text=self._fabric.name, anchor=tk.N)
-        # label_header.grid(row=0)
-
         fabric_info = self._initialize_fabric_info_frame(self._frame)
-        fabric_info.grid(row=2, sticky=tk.EW)
+        fabric_info.grid(row=2, sticky=tk.W)
 
         buttons = self._initialize_button_frame(self._frame)
         buttons.grid(row=10)
@@ -41,6 +38,7 @@ class FabricInfoView():
         property_names = list(Fabric.fabric_properties_and_types().keys())
         fabric_values = self._fabric.get_values()
         properties = []
+        # properties.append("testi")
 
         for i in range(len(property_names)):
             properties.append(f"{property_names[i]}: {fabric_values[i]}")

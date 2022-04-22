@@ -33,7 +33,7 @@ class FabricEditView():
     def _fabric_info_edit_frame(self, container):
         frame = ttk.Frame(container, padding=3)
 
-        properties_and_types = Fabric.fabric_properties_and_types()
+        properties_and_types = Fabric.properties_and_types()
         fabric_values = self._fabric.get_values()
 
         properties_types_list = list(properties_and_types.items())

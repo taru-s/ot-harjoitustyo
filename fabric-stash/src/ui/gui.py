@@ -54,7 +54,7 @@ class GUI:
 
         self._current_view = FabricListView(
             self._root,
-            self._handle_list_view_add_fabric, 
+            self._handle_list_view_add_fabric,
             self._handle_list_view_search,
             self._handle_list_view_logout,
             self._handle_list_view_show_fabric

@@ -22,3 +22,17 @@ class TestFabricService(unittest.TestCase):
     def test_get_fabric_by_id_returns_fabric_when_id_found(self):
         returned = self.service.get_fabric_by_id(1)
         self.assertEqual("name, 100cm x 100cm, washed: no", str(returned[0]))
+
+    def test_delete_fabric_by_id_fabric_deleted(self):
+        self.service.delete_fabric_by_id(1)
+        returned = self.service.get_fabric_by_id(1)
+        self.assertEqual(False, returned)
+
+    def test_get_all_ids_returns_ids(self):
+        self.service.add_fabric("name", 100, 100, False)
+        self.service.add_fabric("name", 100, 100, False)
+        
+        returned = self.service.get_all_ids()
+        self.assertEqual([1,2,3], returned)
+
+    

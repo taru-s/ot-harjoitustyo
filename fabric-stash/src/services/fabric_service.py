@@ -29,6 +29,9 @@ class FabricService:
     def get_all_fabrics(self):
         return self._repository.get_all_fabrics()
 
+    def get_all_ids(self):
+        return self._repository.get_all_ids()
+
     def get_fabrics_by_name(self, name):
         fabrics = self._repository.get_fabric_by_name(name)
         if not fabrics:
@@ -40,6 +43,9 @@ class FabricService:
         if not fabrics:
             return False
         return fabrics
+
+    def delete_fabric_by_id(self, fabric_id):
+        self._repository.delete_by_id(fabric_id)
 
     def delete_all(self):
         self._repository.delete_all()

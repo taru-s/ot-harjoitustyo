@@ -2,6 +2,7 @@ import tkinter as tk
 import tkinter.ttk as ttk
 from entities.fabric import Fabric
 
+
 class FabricEditView():
     def __init__(self, root, fabric: Fabric, handle_save, handle_delete, handle_cancel):
         self._root = root
@@ -39,10 +40,10 @@ class FabricEditView():
         properties_types_list = list(properties_and_types.items())
 
         for i in range(len(properties_types_list)):
-            # create frame containing the property name followed by 
-            # appropriate input method widget, add to list of all 
+            # create frame containing the property name followed by
+            # appropriate input method widget, add to list of all
             # property-input-frames, in a separate loop add all these
-            # frames to the whole info frame to be returned 
+            # frames to the whole info frame to be returned
             # TODO extract to own method?
 
             prop_label_text = properties_types_list[i][0]
@@ -56,7 +57,7 @@ class FabricEditView():
                 input_widget = ttk.Entry(frame, textvariable=input_text)
             elif properties_types_list[i][1] == bool:
                 input_widget = ttk.Checkbutton(frame, onvalue=1, offvalue=0)
-            
+
             prop_label.grid(row=i, column=0)
             input_widget.grid(row=i, column=1)
 
@@ -85,5 +86,5 @@ class FabricEditView():
             command=lambda: self._handle_cancel(self._fabric)
         )
         button_cancel.grid(row=0, column=3, padx=4)
-        
+
         return frame

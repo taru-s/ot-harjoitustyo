@@ -2,8 +2,9 @@ import tkinter as tk
 import tkinter.ttk as ttk
 from entities.fabric import Fabric
 
+
 class FabricInfoView():
-    def __init__(self, root, fabric:Fabric,handle_edit, handle_delete, handle_back):
+    def __init__(self, root, fabric: Fabric, handle_edit, handle_delete, handle_back):
         self._root = root
         self._fabric = fabric
         self._handle_edit = handle_edit
@@ -22,10 +23,9 @@ class FabricInfoView():
         self._fabric = None
         self._frame.destroy()
 
-
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-        
+
         fabric_info = self._initialize_fabric_info_frame(self._frame)
         fabric_info.grid(row=2, sticky=tk.W)
 
@@ -45,7 +45,7 @@ class FabricInfoView():
             properties.append(f"{property_names[i]}: {fabric_values[i]}")
 
         property_fields = []
-                
+
         for prop in properties:
             label = ttk.Label(frame, text=prop)
             property_fields.append(label)
@@ -78,5 +78,5 @@ class FabricInfoView():
             command=self._handle_back
         )
         button_list.grid(row=0, column=3, padx=4)
-        
+
         return frame

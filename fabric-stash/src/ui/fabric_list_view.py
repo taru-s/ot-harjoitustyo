@@ -4,6 +4,7 @@ from tkinter import constants
 
 from services.fabric_service import FabricService
 
+
 class FabricListView:
     def __init__(self, root, handle_add, handle_search, handle_logout,
                  handle_show_fabric):
@@ -26,8 +27,9 @@ class FabricListView:
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
-        
-        label_header = ttk.Label(master=self._frame, text="Fabric list", anchor=tk.N)
+
+        label_header = ttk.Label(
+            master=self._frame, text="Fabric list", anchor=tk.N)
         label_header.grid(row=0)
 
         fabric_list = self._fabric_frame(self._frame)
@@ -36,7 +38,7 @@ class FabricListView:
         buttons = self._button_frame(self._frame)
         buttons.grid(row=10)
 
-    def _fabric_frame(self, container): 
+    def _fabric_frame(self, container):
         frame = ttk.Frame(container, padding=3)
 
         fabrics = self._service.get_all_fabrics()
@@ -56,7 +58,7 @@ class FabricListView:
                 fabric_button = ttk.Button(
                     frame,
                     text=str(fabric),
-                    command= lambda: self._handle_show_fabric(lam_fabric)
+                    command=lambda: self._handle_show_fabric(lam_fabric)
                 )
 
                 fabric_buttons.append(fabric_button)
@@ -89,7 +91,5 @@ class FabricListView:
             command=self._handle_logout
         )
         button_logout.grid(row=0, column=3, padx=4)
-        
-        return frame
 
-    
+        return frame

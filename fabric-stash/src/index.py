@@ -5,11 +5,12 @@ from ui.gui import GUI
 # ui mode options for debugging
 ASK_UI_MODE = True
 
+
 def main(mode="g"):
-    if mode=="t":
+    if mode == "t":
         app_ui = TextUI()
         app_ui.start()
-    elif mode=="g":
+    elif mode == "g":
         window = Tk()
         window.title("Fabric stash")
 
@@ -18,11 +19,12 @@ def main(mode="g"):
 
         window.mainloop()
 
+
 if ASK_UI_MODE:
     UI_MODE = input("g - gui\nt- text ui\n")
     if UI_MODE not in ('g', 't'):
-        UI_MODE="t"
+        UI_MODE = "t"
 else:
-    UI_MODE="g"
+    UI_MODE = "g"
 
 main(UI_MODE)

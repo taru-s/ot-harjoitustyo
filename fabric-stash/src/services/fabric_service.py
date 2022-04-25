@@ -35,8 +35,8 @@ class FabricService:
             return False
         return fabrics
 
-    def get_fabric_by_id(self, id):
-        fabrics = self._repository.get_fabric_by_id(id)
+    def get_fabric_by_id(self, fabric_id):
+        fabrics = self._repository.get_fabric_by_id(fabric_id)
         if not fabrics:
             return False
         return fabrics

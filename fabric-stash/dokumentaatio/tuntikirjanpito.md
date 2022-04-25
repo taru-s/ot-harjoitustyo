@@ -9,6 +9,6 @@
 | 12.04. |1| käyttäjän syötteen validointi, refaktorointia|
 | 20.04. |4| graafinen käyttölittyymä |
 | 22.04. |3| graafinen käyttöliittymä, siirtymä näkymien välillä |
-| 25.04. |3| gui, yksittäisen kankaan tietojen poistaminen |
-| yht.|24| |
+| 25.04. |4| gui, yksittäisen kankaan tietojen poistaminen |
+| yht.|25| |
 

@@ -3,7 +3,7 @@ from ui.text_ui import TextUI
 from ui.gui import GUI
 
 # ui mode options for debugging
-ask_ui_mode = True
+ASK_UI_MODE = True
 
 def main(mode="g"):
     if mode=="t":
@@ -18,7 +18,7 @@ def main(mode="g"):
 
         window.mainloop()
 
-if ask_ui_mode:
+if ASK_UI_MODE:
     UI_MODE = input("g - gui\nt- text ui\n")
     if UI_MODE not in ('g', 't'):
         UI_MODE="t"

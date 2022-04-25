@@ -35,5 +35,11 @@ class FabricService:
             return False
         return fabrics
 
+    def get_fabric_by_id(self, id):
+        fabrics = self._repository.get_fabric_by_id(id)
+        if not fabrics:
+            return False
+        return fabrics
+
     def delete_all(self):
         self._repository.delete_all()

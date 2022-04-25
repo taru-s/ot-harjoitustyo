@@ -6,12 +6,14 @@ from .fabric_list_view import FabricListView
 from .fabric_info_view import FabricInfoView
 from .fabric_edit_view import FabricEditView
 from entities.fabric import Fabric
+from services.fabric_service import FabricService
 
 
 class GUI:
     def __init__(self, root):
         self._root = root
         self._current_view = None
+        # self._service = FabricService()
 
     def start(self):
         self._show_fabric_list_view()
@@ -29,8 +31,8 @@ class GUI:
     def _handle_list_view_logout(self):
         print("logged out")
 
-    def _handle_list_view_show_fabric(self, *fabric):
-        self._show_fabric_info_view(fabric[0])
+    def _handle_list_view_show_fabric(self, *fabric_id):
+        self._show_fabric_info_view(fabric_id[0])
 
     def _handle_info_view_edit_fabric(self, *fabric):
         self._show_fabric_edit_view(fabric[0])
@@ -63,12 +65,12 @@ class GUI:
 
         self._current_view.pack()
 
-    def _show_fabric_info_view(self, fabric=Fabric("no fabric", 0, 0, False)):
+    def _show_fabric_info_view(self, fabric_id):
         self._hide_current_view()
 
         self._current_view = FabricInfoView(
             self._root,
-            fabric,
+            fabric_id,
             self._handle_info_view_edit_fabric,
             self._handle_info_view_delete_fabric,
             self._handle_info_view_back

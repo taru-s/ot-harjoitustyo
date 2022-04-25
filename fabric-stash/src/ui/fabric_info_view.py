@@ -1,12 +1,15 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 from entities.fabric import Fabric
+from services.fabric_service import FabricService
 
 
 class FabricInfoView():
-    def __init__(self, root, fabric: Fabric, handle_edit, handle_delete, handle_back):
+    def __init__(self, root, fabric_id, handle_edit, handle_delete, handle_back):
+        self._service = FabricService()
         self._root = root
-        self._fabric = fabric
+        self._fabric_id = fabric_id
+        self._fabric = self._service.get_fabric_by_id(fabric_id)
         self._handle_edit = handle_edit
         self._handle_delete = handle_delete
         self._handle_back = handle_back
@@ -61,7 +64,7 @@ class FabricInfoView():
         button_edit = ttk.Button(
             frame,
             text="edit",
-            command=lambda: self._handle_edit(self._fabric)
+            command=lambda: self._handle_edit(self._fabric_id)
         )
         button_edit.grid(row=0, column=0, padx=4)
 

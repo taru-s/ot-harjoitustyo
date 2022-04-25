@@ -42,7 +42,7 @@ class FabricService:
         fabrics = self._repository.get_fabric_by_id(fabric_id)
         if not fabrics:
             return False
-        return fabrics
+        return fabrics[0]
 
     def delete_fabric_by_id(self, fabric_id):
         self._repository.delete_by_id(fabric_id)

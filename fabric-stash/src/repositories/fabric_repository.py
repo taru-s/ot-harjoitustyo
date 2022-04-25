@@ -17,7 +17,7 @@ class FabricRepository:
         cursor = self._connection.cursor()
         cursor.execute("SELECT id FROM Fabrics")
         rows = cursor.fetchall()
-        return rows
+        return [row["id"] for row in rows]
 
     def get_fabric_by_property(self, property_name, property_state):
         pass

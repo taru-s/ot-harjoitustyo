@@ -1,6 +1,7 @@
 # tkinter testailuja
 
 from tkinter import Tk, ttk, constants
+from tkinter import messagebox
 
 from .fabric_list_view import FabricListView
 from .fabric_info_view import FabricInfoView
@@ -53,9 +54,15 @@ class GUI:
         self._show_fabric_info_view(fabric_id[0])
 
     def _handle_delete_fabric(self, *fabric_id):
-        
-        self._service.delete_fabric_by_id(fabric_id[0])
-        self._show_fabric_list_view()
+        fabric_name = self._service.get_fabric_by_id(fabric_id[0]).name
+        delete_confirmation = messagebox.askyesno(
+            title="delete fabric",
+            message=f"Are you sure you want to delete {fabric_name}?"
+            )
+
+        if delete_confirmation:
+            self._service.delete_fabric_by_id(fabric_id[0])
+            self._show_fabric_list_view()
 
     def _show_fabric_list_view(self):
         self._hide_current_view()

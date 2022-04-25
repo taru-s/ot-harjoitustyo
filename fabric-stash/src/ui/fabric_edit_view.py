@@ -42,27 +42,38 @@ class FabricEditView():
 
         properties_types_list = list(properties_and_types.items())
 
-        for i in range(len(properties_types_list)):
-            # create frame containing the property name followed by
-            # appropriate input method widget, add to list of all
-            # property-input-frames, in a separate loop add all these
-            # frames to the whole info frame to be returned
-            # TODO extract to own method?
+        header_current_label = ttk.Label(frame, text="current")
+        header_new_label = ttk.Label(frame, text="new")
+        header_current_label.grid(row=0, column=1)
+        header_new_label.grid(row=0,column=2)
 
-            prop_label_text = properties_types_list[i][0]
-            prop_label = ttk.Label(frame, text=prop_label_text)
+        name_label = ttk.Label(frame, text="name")
+        current_name_label = ttk.Label(frame, text=fabric.name)
+        name_input = tk.StringVar(frame, value=fabric.name)
+        name_entry = ttk.Entry(frame, textvariable=name_input)
 
-            if properties_types_list[i][1] == str:
-                input_text = tk.StringVar()
-                input_widget = ttk.Entry(frame, textvariable=input_text)
-            elif properties_types_list[i][1] == int:
-                input_text = tk.IntVar()
-                input_widget = ttk.Entry(frame, textvariable=input_text)
-            elif properties_types_list[i][1] == bool:
-                input_widget = ttk.Checkbutton(frame, onvalue=1, offvalue=0)
+        name_label.grid(row=10,column=0)
+        current_name_label.grid(row=10,column=1)
+        name_entry.grid(row=10,column=2)
 
-            prop_label.grid(row=i, column=0)
-            input_widget.grid(row=i, column=1)
+        width_label = ttk.Label(frame, text="width")
+        width_current_label = ttk.Label(frame, text=fabric.width)
+        width_input = tk.IntVar(frame, value=fabric.width)
+        width_entry = ttk.Entry(frame, textvariable=width_input)
+
+        width_label.grid(row=20,column=0)
+        width_current_label.grid(row=20,column=1)
+        width_entry.grid(row=20,column=2)
+
+        length_label = ttk.Label(frame, text="length")
+        length_current_label = ttk.Label(frame, text=fabric.length)
+        length_input = tk.IntVar(frame, value=fabric.length)
+        length_entry = ttk.Entry(frame, textvariable=length_input)
+
+        length_label.grid(row=30,column=0)
+        length_current_label.grid(row=30,column=1)
+        length_entry.grid(row=30,column=2)
+
 
         return frame
 

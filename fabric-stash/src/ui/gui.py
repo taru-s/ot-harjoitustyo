@@ -13,7 +13,7 @@ class GUI:
     def __init__(self, root):
         self._root = root
         self._current_view = None
-        # self._service = FabricService()
+        self._service = FabricService()
 
     def start(self):
         self._show_fabric_list_view()
@@ -34,11 +34,11 @@ class GUI:
     def _handle_list_view_show_fabric(self, *fabric_id):
         self._show_fabric_info_view(fabric_id[0])
 
-    def _handle_info_view_edit_fabric(self, *fabric):
-        self._show_fabric_edit_view(fabric[0])
+    def _handle_info_view_edit_fabric(self, *fabric_id):
+        self._show_fabric_edit_view(fabric_id[0])
 
-    def _handle_info_view_delete_fabric(self):
-        print("delete")
+    def _handle_info_view_delete_fabric(self, *fabric_id):
+        self._handle_delete_fabric(fabric_id[0])
 
     def _handle_info_view_back(self):
         self._show_fabric_list_view()
@@ -46,11 +46,16 @@ class GUI:
     def _handle_edit_view_save(self):
         print("save")
 
-    def _handle_edit_view_delete(self):
-        print("delete")
+    def _handle_edit_view_delete(self, *fabric_id):
+        self._handle_delete_fabric(fabric_id[0])
 
-    def _handle_edit_view_cancel(self, *fabric):
-        self._show_fabric_info_view(fabric[0])
+    def _handle_edit_view_cancel(self, *fabric_id):
+        self._show_fabric_info_view(fabric_id[0])
+
+    def _handle_delete_fabric(self, *fabric_id):
+        
+        self._service.delete_fabric_by_id(fabric_id[0])
+        self._show_fabric_list_view()
 
     def _show_fabric_list_view(self):
         self._hide_current_view()

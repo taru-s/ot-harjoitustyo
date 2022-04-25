@@ -40,7 +40,6 @@ class FabricInfoView():
 
         property_names = list(Fabric.properties_and_types().keys())
         fabric_values = self._fabric.get_values()
-        print(fabric_values)
         properties = []
         # properties.append("testi")
 
@@ -71,7 +70,7 @@ class FabricInfoView():
         button_delete = ttk.Button(
             frame,
             text="delete",
-            command=self._handle_delete
+            command= lambda i = self._fabric_id: self._handle_delete(i)
         )
         button_delete.grid(row=0, column=1, padx=4)
 

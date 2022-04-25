@@ -79,7 +79,7 @@ class FabricEditView():
         button_delete = ttk.Button(
             frame,
             text="delete",
-            command=self._handle_delete
+            command=lambda i = self._fabric_id: self._handle_delete(i)
         )
         button_delete.grid(row=0, column=1, padx=4)
 

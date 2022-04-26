@@ -24,6 +24,9 @@ class GUI:
             self._current_view.destroy()
 
     def _handle_list_view_add_fabric(self):
+        self._service.add_fabric("",0,0,0)
+        all_ids = self._service.get_all_ids()
+        self._show_fabric_edit_view(all_ids[-1])
         print("add")
 
     def _handle_list_view_search(self):
@@ -90,12 +93,12 @@ class GUI:
 
         self._current_view.pack()
 
-    def _show_fabric_edit_view(self, fabric=Fabric("no fabric", 0, 0, False)):
+    def _show_fabric_edit_view(self, fabric_id):
         self._hide_current_view()
 
         self._current_view = FabricEditView(
             self._root,
-            fabric,
+            fabric_id,
             self._handle_edit_view_save,
             self._handle_edit_view_delete,
             self._handle_edit_view_cancel

@@ -10,5 +10,6 @@
 | 20.04. |4| graafinen käyttölittyymä |
 | 22.04. |3| graafinen käyttöliittymä, siirtymä näkymien välillä |
 | 25.04. |4| gui, yksittäisen kankaan tietojen poistaminen, refaktorointia |
-| yht.|25| |
+| 26.04. |3| gui, tietojen tallentaminen ja editointi graafisesta näkymistä |
+| yht.|28| |
 

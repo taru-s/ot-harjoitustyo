@@ -5,19 +5,21 @@ from services.fabric_service import FabricService
 
 class FabricEditView():
     def __init__(self, root, fabric_id, handle_save, handle_delete, handle_cancel):
+        self._service = FabricService()
+
         self._root = root
         self._fabric_id = fabric_id
+        self._fabric = self._service.get_fabric_by_id(self._fabric_id)
         self._handle_save = handle_save
         self._handle_delete = handle_delete
         self._handle_cancel = handle_cancel
         self._frame = None
 
-        self._name_var = tk.StringVar()
-        self._width_var = tk.IntVar()
-        self._length_var = tk.IntVar()
-        self._washed_var = tk.BooleanVar()
+        self._name_var = tk.StringVar(value=self._fabric.name)
+        self._width_var = tk.IntVar(value=self._fabric.width)
+        self._length_var = tk.IntVar(value=self._fabric.length)
+        self._washed_var = tk.BooleanVar(value=self._fabric.washed)
 
-        self._service = FabricService()
 
         self._initialize()
 

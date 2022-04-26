@@ -9,3 +9,10 @@
  - user can search for fabrics by name
  - fabrics information stored in database, refactoring
  - user can delete all fabrics
+
+### Viikko 5
+ - graphic user interface
+   - user can add and edit fabrics 
+   - user can view fabric listing 
+   - user can view information on a single fabric in a separate screen
+   - user can delete fabrics

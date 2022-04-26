@@ -9,3 +9,5 @@
 
 [arkkitehtuurikuvaus](https://github.com/taru-s/ot-harjoitustyo/blob/master/fabric-stash/dokumentaatio/arkkitehtuuri.md)
 
+[viikko5 release](https://github.com/taru-s/ot-harjoitustyo/releases/tag/viikko5)
+

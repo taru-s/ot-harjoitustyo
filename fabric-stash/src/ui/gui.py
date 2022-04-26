@@ -27,7 +27,6 @@ class GUI:
         self._service.add_fabric("",0,0,0)
         all_ids = self._service.get_all_ids()
         self._show_fabric_edit_view(all_ids[-1])
-        print("add")
 
     def _handle_list_view_search(self):
         print("search")

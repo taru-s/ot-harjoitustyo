@@ -36,11 +36,7 @@ class FabricEditView():
     def _fabric_info_edit_frame(self, container):
         frame = ttk.Frame(container, padding=3)
 
-        properties_and_types = Fabric.properties_and_types()
         fabric = self._service.get_fabric_by_id(self._fabric_id)
-        fabric_values = fabric.get_values()
-
-        properties_types_list = list(properties_and_types.items())
 
         header_current_label = ttk.Label(frame, text="current")
         header_new_label = ttk.Label(frame, text="new")

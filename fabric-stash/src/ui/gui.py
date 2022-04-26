@@ -1,12 +1,10 @@
 # tkinter testailuja
 
-from tkinter import Tk, ttk, constants
 from tkinter import messagebox
 
 from .fabric_list_view import FabricListView
 from .fabric_info_view import FabricInfoView
 from .fabric_edit_view import FabricEditView
-from entities.fabric import Fabric
 from services.fabric_service import FabricService
 
 

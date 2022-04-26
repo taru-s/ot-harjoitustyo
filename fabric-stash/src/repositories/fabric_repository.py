@@ -53,6 +53,14 @@ class FabricRepository:
             "INSERT INTO Fabrics (name, width, length, washed) VALUES (?,?,?,?)", values)
         self._connection.commit()
 
+    def update_fabric_by_id(self, fabric_id, fabric: Fabric):
+        cursor = self._connection.cursor()
+        values = fabric.get_values()
+        values.append(fabric_id)
+        cursor.execute(
+            "UPDATE Fabrics SET name=?, width=?, length=?, washed=? WHERE id = ?", values)
+        self._connection.commit()
+
     def delete_all(self):
         cursor = self._connection.cursor()
         cursor.execute('DELETE FROM Fabrics')

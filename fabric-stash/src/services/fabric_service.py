@@ -1,3 +1,4 @@
+from typing import List
 from repositories.fabric_repository import FabricRepository
 from entities.fabric import Fabric
 from database_connection import get_database_connection
@@ -23,8 +24,9 @@ class FabricService:
         self._repository.add_fabric(fabric)
         return True
 
-    def edit_fabric(self, name):
-        pass
+    def edit_fabric(self, fabric_id, name, width, length , washed):
+        fabric_info = Fabric(str(name), width, length, washed)
+        self._repository.update_fabric_by_id(fabric_id, fabric_info)
 
     def get_all_fabrics(self):
         return self._repository.get_all_fabrics()
@@ -32,16 +34,16 @@ class FabricService:
     def get_all_ids(self):
         return self._repository.get_all_ids()
 
-    def get_fabrics_by_name(self, name):
+    def get_fabrics_by_name(self, name) -> List:
         fabrics = self._repository.get_fabric_by_name(name)
         if not fabrics:
             return False
         return fabrics
 
-    def get_fabric_by_id(self, fabric_id):
+    def get_fabric_by_id(self, fabric_id) -> Fabric:
         fabrics = self._repository.get_fabric_by_id(fabric_id)
         if not fabrics:
-            return False
+            return None
         return fabrics[0]
 
     def delete_fabric_by_id(self, fabric_id):

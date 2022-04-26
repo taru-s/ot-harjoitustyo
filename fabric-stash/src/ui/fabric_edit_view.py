@@ -1,6 +1,5 @@
 import tkinter as tk
 import tkinter.ttk as ttk
-from entities.fabric import Fabric
 from services.fabric_service import FabricService
 
 class FabricEditView():

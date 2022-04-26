@@ -15,20 +15,20 @@ Multiple users can use the application on the same machine by providing unique u
      
 
 ### while logged in, a user can:
-- view the registered fabrics as a list (done)
-  - view the information of a registered fabric
+- view the registered fabrics as a list (done, gui)
+  - view the information of a registered fabric (done, gui)
 - register new fabrics to the stash (done)
-- edit the information of registered fabrics
+- edit the information of registered fabrics (done, gui)
 - delete registered fabrics
-  - all (done)
-  - one
+  - all (done, text ui)
+  - one (done, gui)
 - log out and return to the login screen
 
 
 ### additional functionality:
 
 - search and filter fabrics based on certain properties 
-  - name (done)
+  - name (done, text ui)
 
 - register sewing projects in addition to fabrics
 - assign fabrics to projects

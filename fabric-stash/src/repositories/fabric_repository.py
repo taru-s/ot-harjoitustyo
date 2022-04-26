@@ -12,7 +12,7 @@ class FabricRepository:
 
         return [Fabric(row["name"], row["width"], row["length"],
                        row["washed"]) for row in rows]
-    
+
     def get_all_ids(self):
         cursor = self._connection.cursor()
         cursor.execute("SELECT id FROM Fabrics")

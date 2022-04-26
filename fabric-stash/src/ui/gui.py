@@ -56,7 +56,6 @@ class GUI:
                                     length, 
                                     washed
                                     )
-        print("save")
 
         self._show_fabric_info_view(fabric_id)
 

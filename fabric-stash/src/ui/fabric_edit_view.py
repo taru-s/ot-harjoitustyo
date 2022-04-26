@@ -43,15 +43,14 @@ class FabricEditView():
     def _fabric_info_edit_frame(self, container):
         frame = ttk.Frame(container, padding=3)
 
-        fabric = self._service.get_fabric_by_id(self._fabric_id)
-
         header_current_label = ttk.Label(frame, text="current")
         header_new_label = ttk.Label(frame, text="new")
         header_current_label.grid(row=0, column=1)
         header_new_label.grid(row=0,column=2)
 
+
         name_label = ttk.Label(frame, text="name")
-        current_name_label = ttk.Label(frame, text=fabric.name)        
+        current_name_label = ttk.Label(frame, text=self._fabric.name)        
         name_entry = ttk.Entry(frame, textvariable=self._name_var)
 
         name_label.grid(row=10,column=0)
@@ -59,7 +58,7 @@ class FabricEditView():
         name_entry.grid(row=10,column=2)
 
         width_label = ttk.Label(frame, text="width")
-        width_current_label = ttk.Label(frame, text=fabric.width)
+        width_current_label = ttk.Label(frame, text=self._fabric.width)
         width_entry = ttk.Entry(frame, textvariable=self._width_var)
 
         width_label.grid(row=20,column=0)
@@ -67,7 +66,7 @@ class FabricEditView():
         width_entry.grid(row=20,column=2)
 
         length_label = ttk.Label(frame, text="length")
-        length_current_label = ttk.Label(frame, text=fabric.length)
+        length_current_label = ttk.Label(frame, text=self._fabric.length)
         length_entry = ttk.Entry(frame, textvariable=self._length_var)
 
         length_label.grid(row=30,column=0)
@@ -75,7 +74,7 @@ class FabricEditView():
         length_entry.grid(row=30,column=2)
 
         washed_label = ttk.Label(frame, text="washed")
-        washed_current_label = ttk.Label(frame, text=self._washed_label_to_str(fabric.washed))
+        washed_current_label = ttk.Label(frame, text=self._washed_label_to_str(self._fabric.washed))
         washed_entry = ttk.Checkbutton(frame, variable=self._washed_var)
 
         washed_label.grid(row=40,column=0)

@@ -3,7 +3,7 @@ from ui.text_ui import TextUI
 from ui.gui import GUI
 
 # ui mode options for debugging
-ASK_UI_MODE = True
+ASK_UI_MODE = False
 
 
 def main(mode="g"):

@@ -21,7 +21,7 @@ def main(mode="g"):
 
 
 if ASK_UI_MODE:
-    UI_MODE = input("g - gui\nt- text ui\n")
+    UI_MODE = input("g - gui\nt - text ui\n")
     if UI_MODE not in ('g', 't'):
         UI_MODE = "t"
 else:

@@ -11,3 +11,18 @@
 
 [viikko5 release](https://github.com/taru-s/ot-harjoitustyo/releases/tag/viikko5)
 
+
+.
+
+.
+
+
+### Poetry komennot
+**käynnistys:** poetry run invoke start
+
+**testaus:** poetry run invoke test
+
+**testikattavuusraportti:** poetry run invoke coverage-report
+
+**pylint tarkistus:** poetry run invoke lint
+

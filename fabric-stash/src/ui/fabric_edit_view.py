@@ -1,6 +1,5 @@
 import tkinter as tk
 import tkinter.ttk as ttk
-from entities.fabric import Fabric
 from services.fabric_service import FabricService
 
 class FabricEditView():
@@ -18,7 +17,8 @@ class FabricEditView():
         self._name_var = tk.StringVar(value=self._fabric.name)
         self._width_var = tk.IntVar(value=self._fabric.width)
         self._length_var = tk.IntVar(value=self._fabric.length)
-        self._washed_var = tk.BooleanVar(value=self._fabric.washed)
+        self._washed_var = tk.BooleanVar(value=self._fabric.washed) 
+        #TODO change washed to int and checkbutton on/off values to 1 and 0
 
 
         self._initialize()

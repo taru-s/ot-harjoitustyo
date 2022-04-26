@@ -2,10 +2,12 @@
 
 from tkinter import messagebox
 
+
 from .fabric_list_view import FabricListView
 from .fabric_info_view import FabricInfoView
 from .fabric_edit_view import FabricEditView
 from services.fabric_service import FabricService
+from entities.fabric import Fabric
 
 
 class GUI:
@@ -44,8 +46,19 @@ class GUI:
     def _handle_info_view_back(self):
         self._show_fabric_list_view()
 
-    def _handle_edit_view_save(self):
+    def _handle_edit_view_save(self, fabric_id, name, width, length, washed_bool):
+        washed = 0
+        if washed_bool:
+            washed = 1
+        self._service.edit_fabric(fabric_id, 
+                                    name, 
+                                    width, 
+                                    length, 
+                                    washed
+                                    )
         print("save")
+
+        self._show_fabric_info_view(fabric_id)
 
     def _handle_edit_view_delete(self, *fabric_id):
         self._handle_delete_fabric(fabric_id[0])

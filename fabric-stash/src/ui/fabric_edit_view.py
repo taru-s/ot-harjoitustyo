@@ -74,6 +74,15 @@ class FabricEditView():
         length_current_label.grid(row=30,column=1)
         length_entry.grid(row=30,column=2)
 
+        washed_label = ttk.Label(frame, text="washed")
+        washed_current_label = ttk.Label(frame, text=self._washed_label_to_str(fabric.washed))
+        washed_input = tk.BooleanVar(frame, value=False)
+        washed_entry = ttk.Checkbutton(frame, variable=washed_input)
+
+        washed_label.grid(row=40,column=0)
+        washed_current_label.grid(row=40,column=1)
+        washed_entry.grid(row=40,column=2)
+
 
         return frame
 
@@ -102,3 +111,11 @@ class FabricEditView():
         button_cancel.grid(row=0, column=3, padx=4)
 
         return frame
+
+    def _washed_label_to_str(self, int_value):
+        if int_value == 1:
+            return "yes"
+        elif int_value == 0:
+            return "no"
+        else:
+            return "n/a"

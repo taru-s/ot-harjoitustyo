@@ -15,14 +15,18 @@
 .
 
 .
-
+### Viikko5 release asennus
+1. Lataa ja pura viikko5 releasen zip-tiedosto
+2. mene hakemistoon ot-harjoitustyo-viikko5/fabric-stash/
+3. asenna riippuvuudet ajamalla komento `poetry install` 
+4. käynnistä sovellus komennolla `poetry run invoke start`
 
 ### Poetry komennot
-**käynnistys:** poetry run invoke start
+**käynnistys:** `poetry run invoke start`
 
-**testaus:** poetry run invoke test
+**testaus:** `poetry run invoke test`
 
-**testikattavuusraportti:** poetry run invoke coverage-report
+**testikattavuusraportti:** `poetry run invoke coverage-report`
 
-**pylint tarkistus:** poetry run invoke lint
+**pylint tarkistus:** `poetry run invoke lint`
 

@@ -1,5 +1,13 @@
 class Fabric:
     def __init__(self, name, width=0, length=0, washed=0) -> None:
+        """Creates a Fabric object
+
+        Args:
+            name (str): name of the fabric
+            width (int, optional): Width of fabric in centimeters. Defaults to 0.
+            length (int, optional): Length of fabric in centimeters. Defaults to 0.
+            washed (int, optional): Has the fabric been washed? Can be 0 for false or 1 for true. Defaults to 0.
+        """        
         self._name = name
         self._width = width
         self._length = length

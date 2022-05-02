@@ -16,3 +16,6 @@
    - user can view fabric listing 
    - user can view information on a single fabric in a separate screen
    - user can delete fabrics
+
+### Viikko 6
+ - search view added to gui

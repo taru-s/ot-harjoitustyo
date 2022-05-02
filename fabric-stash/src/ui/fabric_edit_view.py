@@ -3,7 +3,7 @@ import tkinter.ttk as ttk
 from services.fabric_service import FabricService
 
 class FabricEditView():
-    def __init__(self, root, fabric_id, handle_save, handle_delete, handle_cancel):
+    def __init__(self, root, fabric_id, from_add_new, handle_save, handle_delete, handle_cancel):
         self._service = FabricService()
 
         self._root = root
@@ -13,6 +13,8 @@ class FabricEditView():
         self._handle_delete = handle_delete
         self._handle_cancel = handle_cancel
         self._frame = None
+
+        self._from_add_new = from_add_new
 
         self._name_var = tk.StringVar(value=self._fabric.name)
         self._width_var = tk.IntVar(value=self._fabric.width)
@@ -110,7 +112,7 @@ class FabricEditView():
         button_cancel = ttk.Button(
             frame,
             text="cancel",
-            command=lambda: self._handle_cancel(self._fabric_id)
+            command=lambda: self._handle_cancel(self._from_add_new, self._fabric_id)
         )
         button_cancel.grid(row=0, column=3, padx=4)
 

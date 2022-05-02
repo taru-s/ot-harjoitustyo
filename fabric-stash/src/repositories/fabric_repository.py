@@ -26,9 +26,7 @@ class FabricRepository:
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM Fabrics WHERE name = ?", [name])
         rows = cursor.fetchall()
-
-        return [Fabric(row["name"], row["width"], row["length"],
-                       row["washed"]) for row in rows]
+        return [row["id"] for row in rows]
 
     def get_fabric_by_id(self, fabric_id):
         cursor = self._connection.cursor()

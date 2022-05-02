@@ -23,10 +23,10 @@ class FabricService:
         return self._repository.get_all_ids()
 
     def get_fabrics_by_name(self, name) -> List:
-        fabrics = self._repository.get_fabric_by_name(name)
-        if not fabrics:
+        fabric_ids = self._repository.get_fabric_by_name(name)
+        if not fabric_ids:
             return False
-        return fabrics
+        return fabric_ids
 
     def get_fabric_by_id(self, fabric_id) -> Fabric:
         fabrics = self._repository.get_fabric_by_id(fabric_id)

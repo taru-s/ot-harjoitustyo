@@ -41,11 +41,10 @@ class FabricListView:
     def _fabric_frame(self, container):
         frame = ttk.Frame(container, padding=3)
 
-        fabrics = self._service.get_all_fabrics()
         fabric_ids = self._service.get_all_ids()
         fabric_buttons = []
 
-        if not fabrics:
+        if not fabric_ids:
             no_fabrics_button = ttk.Button(
                 frame,
                 text="no fabrics, add new",

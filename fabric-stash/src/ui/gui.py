@@ -6,6 +6,7 @@ from tkinter import messagebox
 from .fabric_list_view import FabricListView
 from .fabric_info_view import FabricInfoView
 from .fabric_edit_view import FabricEditView
+from .fabric_search_view import FabricSearchView
 from services.fabric_service import FabricService
 from entities.fabric import Fabric
 
@@ -23,13 +24,17 @@ class GUI:
         if self._current_view:
             self._current_view.destroy()
 
-    def _handle_list_view_add_fabric(self):
+    def _add_fabric(self):
         self._service.add_fabric("",0,0,0)
         all_ids = self._service.get_all_ids()
         self._show_fabric_edit_view(all_ids[-1], True)
 
+    def _handle_list_view_add_fabric(self):
+        self._add_fabric()
+
     def _handle_list_view_search(self):
         print("search")
+        self._show_fabric_search_view()
 
     def _handle_list_view_logout(self):
         print("logged out")
@@ -80,6 +85,17 @@ class GUI:
             self._service.delete_fabric_by_id(fabric_id[0])
             self._show_fabric_list_view()
 
+    def _handle_search_view_add(self):
+        self._add_fabric()
+        print("add") 
+
+    def _handle_search_view_list(self):
+        self._show_fabric_list_view()
+        print("list")
+
+    def _handle_search_view_show_fabric(self, *fabric_id):
+        self._show_fabric_info_view(fabric_id[0])
+
     def _show_fabric_list_view(self):
         self._hide_current_view()
 
@@ -116,6 +132,18 @@ class GUI:
             self._handle_edit_view_save,
             self._handle_edit_view_delete,
             self._handle_edit_view_cancel
+        )
+
+        self._current_view.pack()
+
+    def _show_fabric_search_view(self):
+        self._hide_current_view()
+
+        self._current_view = FabricSearchView(
+            self._root,
+            self._handle_search_view_add,
+            self._handle_search_view_list,
+            self._handle_search_view_show_fabric
         )
 
         self._current_view.pack()

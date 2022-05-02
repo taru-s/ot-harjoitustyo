@@ -74,6 +74,7 @@ class FabricInfoView():
         )
         button_delete.grid(row=0, column=1, padx=4)
 
+        #TODO change to back button, takes to list or search view depending on where user came from
         button_list = ttk.Button(
             frame,
             text="list",

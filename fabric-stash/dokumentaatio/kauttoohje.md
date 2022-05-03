@@ -1,6 +1,6 @@
 
 
-### asentaminen
+### Asentaminen
 1. Lataa ja pura releasen zip-tiedosto
 2. mene hakemistoon ot-harjoitustyo-viikko5/fabric-stash/
 3. asenna riippuvuudet ajamalla komento `poetry install` 

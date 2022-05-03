@@ -12,7 +12,7 @@ class Fabric:
         """Initializes a Fabric object.
 
         Args:
-            name (str): name of the fabric
+            name (str): Name of the fabric.
             width (int, optional): Width of fabric in centimeters. Defaults to 0.
             length (int, optional): Length of fabric in centimeters. Defaults to 0.
             washed (int, optional): Has the fabric been washed? Can be 0 for false
@@ -24,6 +24,12 @@ class Fabric:
         self._washed = washed
 
     def __str__(self) -> str:
+        """Constructs and returns a string representation of the Fabric object.
+
+        Returns:
+            str: String that tells the name and dimensions of the fabric,
+                    and whether it has been washed.
+        """
         if self.washed == 1:
             washed = "yes"
         else:
@@ -33,7 +39,7 @@ class Fabric:
 
     @classmethod
     def properties_and_types(cls):
-        """Returns the properties and their types of Fabric objects as a dict.
+        """Returns the properties and their types of Fabric class as a dict.
 
         Returns:
             dict: Contains the names of fabric properties as keys,

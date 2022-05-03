@@ -12,5 +12,6 @@
 | 25.04. |4| gui, yksittäisen kankaan tietojen poistaminen, refaktorointia |
 | 26.04. |3| gui, tietojen tallentaminen ja editointi graafisesta näkymistä |
 | 02.05. |2| gui, hakunäkymä, haku koko nimen perusteella |
-| yht.|28| |
+| 03.05. |2| dokumentaatio, doc-string
+| yht.|32| |
 

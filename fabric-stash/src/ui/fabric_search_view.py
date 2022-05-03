@@ -44,10 +44,10 @@ class FabricSearchView:
     def _search_frame(self, container):
         frame = ttk.Frame(container, padding=3)
         search_text_entry = ttk.Entry(frame, textvariable=self._search_var) 
-        search_text_entry.grid(column=0, columnspan=2)
+        search_text_entry.grid(row=1, column=1, columnspan=2)
 
-        search_button = ttk.Button(frame, text="search", command= self._update_fabric_list)
-        search_button.grid(column=3)
+        search_button = ttk.Button(frame, text="search", command = self._update_fabric_list)
+        search_button.grid(row=1, column=3)
         return frame
 
     def _fabric_frame(self, container):
@@ -92,6 +92,6 @@ class FabricSearchView:
                 fabric_button = ttk.Button(
                     self._fabric_list_frame,
                     text=str(fabric),
-                    command=lambda i = fabric_id: self._handle_show_fabric(i)
+                    command=lambda i=fabric_id: self._handle_show_fabric(i)
                 )
                 fabric_button.grid(row=fabric_id)

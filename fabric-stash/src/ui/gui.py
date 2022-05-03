@@ -8,11 +8,10 @@ from .fabric_info_view import FabricInfoView
 from .fabric_edit_view import FabricEditView
 from .fabric_search_view import FabricSearchView
 from services.fabric_service import FabricService
-from entities.fabric import Fabric
 
 
 class GUI:
-    """Class for managing the Graphical User Interface
+    """Class for managing the Graphical User Interface and handling user commands
     """
     def __init__(self, root):
         self._root = root
@@ -77,6 +76,7 @@ class GUI:
         self._delete_fabric(fabric_id[0])
 
     def _handle_info_view_back(self):
+        #TODO change to show the list or search view depending on where the user came from
         self._show_fabric_list_view()
 
     

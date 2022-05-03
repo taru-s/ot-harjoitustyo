@@ -41,7 +41,6 @@ class FabricInfoView():
         property_names = list(Fabric.properties_and_types().keys())
         fabric_values = self._fabric.get_values()
         properties = []
-        # properties.append("testi")
 
         for i in range(len(property_names)):
             properties.append(f"{property_names[i]}: {fabric_values[i]}")
@@ -75,11 +74,11 @@ class FabricInfoView():
         button_delete.grid(row=0, column=1, padx=4)
 
         #TODO change to back button, takes to list or search view depending on where user came from
-        button_list = ttk.Button(
+        button_back = ttk.Button(
             frame,
-            text="list",
+            text="back",
             command=self._handle_back
         )
-        button_list.grid(row=0, column=3, padx=4)
+        button_back.grid(row=0, column=3, padx=4)
 
         return frame

@@ -35,6 +35,7 @@ class FabricService:
             washed (int): Has the fabric been washed? Can be 0 for false or 1 for true.
         """
 
+        #TODO validate fabric information types
         fabric_info = Fabric(str(name), width, length, washed)
         self._repository.update_fabric_by_id(fabric_id, fabric_info)
 

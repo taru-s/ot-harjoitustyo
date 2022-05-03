@@ -1,5 +1,12 @@
 # READ ME
 
+## Fabric Stash
+
+An application for managing fabrics and their information. The user can save, edit, delete and search for information on their fabrics.
+
+## Dokumentaatio
+
+[Käyttöohje](https://github.com/taru-s/ot-harjoitustyo/blob/master/fabric-stash/dokumentaatio/kayttoohje.md)
 
 [vaatimusmaarittely](https://github.com/taru-s/ot-harjoitustyo/blob/master/fabric-stash/dokumentaatio/vaatimusmaarittely.md)
 
@@ -9,14 +16,12 @@
 
 [arkkitehtuurikuvaus](https://github.com/taru-s/ot-harjoitustyo/blob/master/fabric-stash/dokumentaatio/arkkitehtuuri.md)
 
-[viikko5 release](https://github.com/taru-s/ot-harjoitustyo/releases/tag/viikko5)
+[releaset](https://github.com/taru-s/ot-harjoitustyo/releases/)
 
 
-.
 
-.
-### Viikko5 release asennus
-1. Lataa ja pura viikko5 releasen zip-tiedosto
+### Releasen asennus
+1. Lataa ja pura releasen zip-tiedosto
 2. mene hakemistoon ot-harjoitustyo-viikko5/fabric-stash/
 3. asenna riippuvuudet ajamalla komento `poetry install` 
 4. käynnistä sovellus komennolla `poetry run invoke start`

@@ -28,7 +28,7 @@ Multiple users can use the application on the same machine by providing unique u
 ### additional functionality:
 
 - search and filter fabrics based on certain properties 
-  - name (done, text ui)
+  - name (done, text ui, gui)
 
 - register sewing projects in addition to fabrics
 - assign fabrics to projects

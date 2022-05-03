@@ -125,5 +125,5 @@ When a user clicks on a button to add a new fabric, the following commands are e
       S -->> GUI: all_ids
       GUI ->> GUI: _show_fabric_edit_view(all_ids[-1])   
 ```
-After this, the program proceeds similarly as depicted in the sequence diagram for editing information of a saved fabric.
+When the user presses the add fabric button, a new 'dummy fabric' is created to the database. The GUI then shows this fabrics information in the edit view. After this, the program proceeds similarly as depicted in the sequence diagram for editing information of a saved fabric.
 

@@ -20,3 +20,4 @@
 ### Viikko 6
  - search view added to gui
    - user can search for fabrics by name
+   - user can view the searched fabrics in a list

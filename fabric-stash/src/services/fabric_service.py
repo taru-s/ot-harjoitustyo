@@ -38,10 +38,20 @@ class FabricService:
         fabric_info = Fabric(str(name), width, length, washed)
         self._repository.update_fabric_by_id(fabric_id, fabric_info)
 
-    def get_all_fabrics(self):
+    def get_all_fabrics(self) -> list:
+        """Gets all fabrics as Fabric objects from the database.
+
+        Returns:
+            list: List of Fabric objects.
+        """
         return self._repository.get_all_fabrics()
 
-    def get_all_ids(self):
+    def get_all_ids(self) -> list:
+        """Gets all fabric ids from the database.
+
+        Returns:
+            list: List of fabric ids (int).
+        """
         return self._repository.get_all_ids()
 
     def get_fabrics_by_name(self, name: str) -> List:
@@ -79,8 +89,15 @@ class FabricService:
             return None
         return fabrics[0]
 
-    def delete_fabric_by_id(self, fabric_id):
+    def delete_fabric_by_id(self, fabric_id: int):
+        """Deletes a fabric by the given id.
+
+        Args:
+            fabric_id (int): Id of the fabric to be deleted.
+        """
         self._repository.delete_by_id(fabric_id)
 
     def delete_all(self):
+        """Deletes all fabrics from the database.
+        """
         self._repository.delete_all()

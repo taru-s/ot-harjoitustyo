@@ -101,7 +101,8 @@ class FabricRepository:
 
         Args:
             fabric_id (int): Id of the fabric to be updated
-            fabric (Fabric): A Fabric object containing the new information of the fabric to be updated.
+            fabric (Fabric): A Fabric object containing the new information of the fabric
+                    to be updated.
         """
         cursor = self._connection.cursor()
         values = fabric.get_values()

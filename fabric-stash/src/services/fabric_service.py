@@ -84,10 +84,10 @@ class FabricService:
             Fabric: Returns the fabric with id matching the argument as a Fabric object.
                 If no fabric with the id is found, returns None.
         """
-        fabrics = self._repository.get_fabric_by_id(fabric_id)
-        if not fabrics:
+        fabric = self._repository.get_fabric_by_id(fabric_id)
+        if not fabric:
             return None
-        return fabrics[0]
+        return fabric
 
     def delete_fabric_by_id(self, fabric_id: int):
         """Deletes a fabric by the given id.

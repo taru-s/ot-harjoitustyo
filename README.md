@@ -12,9 +12,7 @@
 [viikko5 release](https://github.com/taru-s/ot-harjoitustyo/releases/tag/viikko5)
 
 
-.
 
-.
 ### Viikko5 release asennus
 1. Lataa ja pura viikko5 releasen zip-tiedosto
 2. mene hakemistoon ot-harjoitustyo-viikko5/fabric-stash/

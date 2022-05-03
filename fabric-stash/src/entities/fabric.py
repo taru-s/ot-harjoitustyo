@@ -1,13 +1,22 @@
 class Fabric:
+    """A class depicting a fabric and it's information.
+
+    Attributes:
+        name: A string for the name of the fabric.
+        width: An integer width of the fabric in centimeters.
+        length: An integer length of the fabric in centimeters.
+        washed: An integer with the value 0 or 1 indicating whether
+                the fabric has been washed or not.
+    """
     def __init__(self, name, width=0, length=0, washed=0) -> None:
-        """Creates a Fabric object
+        """Initializes a Fabric object.
 
         Args:
             name (str): name of the fabric
             width (int, optional): Width of fabric in centimeters. Defaults to 0.
             length (int, optional): Length of fabric in centimeters. Defaults to 0.
             washed (int, optional): Has the fabric been washed? Can be 0 for false
-                                    or 1 for true. Defaults to 0.
+                    or 1 for true. Defaults to 0.
         """
         self._name = name
         self._width = width
@@ -24,6 +33,12 @@ class Fabric:
 
     @classmethod
     def properties_and_types(cls):
+        """Returns the properties and their types of Fabric objects as a dict.
+
+        Returns:
+            dict: Contains the names of fabric properties as keys,
+                    and the types of the properties as values.
+        """
         properties_and_types = {
             "name": str,
             "width": int,
@@ -68,5 +83,10 @@ class Fabric:
             self._washed = washed
 
     def get_values(self):
+        """Returns values of a Fabric object.
+
+        Returns:
+            list: A list containing the values of the Fabric object's properties.
+        """
         values = [self.name, self.width, self.length, self.washed]
         return values

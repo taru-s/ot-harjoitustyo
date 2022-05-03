@@ -2,7 +2,7 @@
 
 ## Fabric Stash
 
-An application for managing fabrics and their information. The user can save, edit, delete and search for information on different fabrics.
+An application for managing fabrics and their information. The user can save, edit, delete and search for information on their fabrics.
 
 ## Dokumentaatio
 

@@ -34,8 +34,10 @@ class FabricService:
             length (int): Length of fabric in centimeters.
             washed (int): Has the fabric been washed? Can be 0 for false or 1 for true.
         """
+        if not isinstance(width, int) or width < 0:
+            raise ValueError("width has to be an integer value >= 0")
 
-        #TODO validate fabric information types
+        #TODO validate fabric information types 
         fabric_info = Fabric(str(name), width, length, washed)
         self._repository.update_fabric_by_id(fabric_id, fabric_info)
 

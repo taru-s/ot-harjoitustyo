@@ -83,17 +83,18 @@ class GUI:
     # edit view handlers
 
     def _handle_edit_view_save(self, fabric_id, name, width, length, washed):
-        # washed = 0
-        # if washed_bool:
-        #     washed = 1
-        self._service.edit_fabric(fabric_id,
-                                  name,
-                                  width,
-                                  length,
-                                  washed
-                                  )
+        try:
+            self._service.edit_fabric(fabric_id,
+                                    name,
+                                    width,
+                                    length,
+                                    washed
+                                    )
+            self._show_fabric_info_view(fabric_id)
+        except ValueError as ex:
+            #TODO extract to error func
+            print(ex)
 
-        self._show_fabric_info_view(fabric_id)
 
     def _handle_edit_view_delete(self, *fabric_id):
         self._delete_fabric(fabric_id[0])

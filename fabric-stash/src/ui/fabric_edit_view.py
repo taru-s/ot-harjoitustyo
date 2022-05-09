@@ -1,3 +1,4 @@
+from ast import arg
 import tkinter as tk
 import tkinter.ttk as ttk
 from services.fabric_service import FabricService
@@ -19,9 +20,10 @@ class FabricEditView():
         self._name_var = tk.StringVar(value=self._fabric.name)
         self._width_var = tk.IntVar(value=self._fabric.width)
         self._length_var = tk.IntVar(value=self._fabric.length)
-        self._washed_var = tk.IntVar(value=self._fabric.washed) 
-        #TODO change washed to int and checkbutton on/off values to 1 and 0
+        self._washed_var = tk.IntVar(value=self._fabric.washed)
+        self._error_var = tk.StringVar(value="")
 
+        self._save_enabled_var = tk.StringVar(value="enabled") #TODO save button enabling/disabling?
 
         self._initialize()
 
@@ -38,6 +40,10 @@ class FabricEditView():
 
         fabric_info = self._fabric_info_edit_frame(self._frame)
         fabric_info.grid(row=2, sticky=tk.EW)
+
+
+        error_message = self._error_message(self._frame)
+        error_message.grid(row=9)
 
         buttons = self._button_frame(self._frame)
         buttons.grid(row=10)
@@ -83,29 +89,62 @@ class FabricEditView():
         washed_current_label.grid(row=40,column=1)
         washed_entry.grid(row=40,column=2)
 
+        self._width_var.trace("w", self._validate_width)
+        self._length_var.trace("w", self._validate_length)
+
         return frame
+
+    def _error_message(self, container):
+        frame = ttk.Frame(container)
+        error_label = ttk.Label(frame, textvariable=self._error_var)
+        error_label.grid()
+        return frame
+
+    def _set_error_message(self, boolean):
+        if boolean:
+            self._error_var.set(f"width and length have to be a postive integers")
+        else:
+            self._error_var.set("")
+        
+
+    def _validate_width(self, *args):
+        try:
+            self._width_var.get()
+            self._set_error_message(False)
+        except:
+            self._set_error_message(True)
+
+    def _validate_length(self, *args):
+        try:
+            self._length_var.get()
+            self._set_error_message(False)
+        except:
+            self._set_error_message(True)
+
+    def _press_save_button(self):
+        if self._error_var.get() == "":
+            self._handle_save(self._fabric_id,
+                                self._name_var.get(),
+                                self._width_var.get(),
+                                self._length_var.get(),
+                                self._washed_var.get())
+
 
     def _button_frame(self, container):
         frame = ttk.Frame(container, padding=3)
 
-        #TODO validate user input (width&length int)
         button_save = ttk.Button(
             frame,
             text="save",
-            command=
-                lambda 
-                i = self._fabric_id,
-                : self._handle_save(i, self._name_var.get(), 
-                                        self._width_var.get(),
-                                        self._length_var.get(),
-                                        self._washed_var.get())
+            command=lambda: self._press_save_button(),
+            state=self._save_enabled_var.get
         )
         button_save.grid(row=0, column=0, padx=4)
 
         button_delete = ttk.Button(
             frame,
             text="delete",
-            command=lambda i = self._fabric_id: self._handle_delete(i)
+            command=lambda i=self._fabric_id: self._handle_delete(i)
         )
         button_delete.grid(row=0, column=1, padx=4)
 

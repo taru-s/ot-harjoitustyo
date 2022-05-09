@@ -45,7 +45,7 @@ class FabricRepository:
         """
 
         cursor = self._connection.cursor()
-        cursor.execute("SELECT * FROM Fabrics WHERE name = ?", [name])
+        cursor.execute("SELECT * FROM Fabrics WHERE name LIKE ?", ("%"+name+"%",))
         rows = cursor.fetchall()
         return [row["id"] for row in rows]
 

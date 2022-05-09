@@ -57,11 +57,11 @@ class FabricService:
         """
         return self._repository.get_all_ids()
 
-    def get_fabrics_by_name(self, name: str) -> List:
-        """Get fabrics that have the provided name.
+    def get_fabrics_by_name(self, name_contains: str) -> List:
+        """Get fabrics that contain the provided string in their name.
 
-        Returns a list of the fabrics with a name matching the name given as an argument.
-        If no fabrics with the name are found, returns None.
+        Returns a list of the fabrics with a name containing the string given as an argument.
+        If no fabrics with a name containing the string are found, returns None.
 
         Args:
             name (str): String to be compared to the database fabrics' names.
@@ -69,7 +69,7 @@ class FabricService:
         Returns:
             List: List of ids of the found fabrics. None if no fabrics found by the name.
         """
-        fabric_ids = self._repository.get_fabric_by_name(name)
+        fabric_ids = self._repository.get_fabric_by_name(name_contains)
         if not fabric_ids:
             return None
         return fabric_ids

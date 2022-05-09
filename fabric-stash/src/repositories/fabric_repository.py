@@ -32,20 +32,20 @@ class FabricRepository:
     def get_fabric_by_property(self, property_name, property_state):
         pass
 
-    def get_fabric_by_name(self, name: str) -> list:
+    def get_fabric_by_name(self, name_contains: str) -> list:
         """Gets fabrics by name from the database.
 
-        Gets fabrics with a name matching exactly to the provided name.
+        Gets fabrics with a name containing the string provided as an argument.
 
         Args:
-            name (str): Name with which the fabrics will be searched for from the database
+            name (str): String with which the fabrics will be searched for from the database
 
         Returns:
             list: List of Integer ids.
         """
 
         cursor = self._connection.cursor()
-        cursor.execute("SELECT * FROM Fabrics WHERE name LIKE ?", ("%"+name+"%",))
+        cursor.execute("SELECT * FROM Fabrics WHERE name LIKE ?", ("%"+name_contains+"%",))
         rows = cursor.fetchall()
         return [row["id"] for row in rows]
 

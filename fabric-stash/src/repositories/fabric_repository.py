@@ -32,23 +32,6 @@ class FabricRepository:
     def get_fabric_by_property(self, property_name, property_state):
         pass
 
-    def get_fabric_by_name(self, name_contains: str) -> list:
-        """Gets fabrics by name from the database.
-
-        Gets fabrics with a name containing the string provided as an argument.
-
-        Args:
-            name (str): String with which the fabrics will be searched for from the database
-
-        Returns:
-            list: List of Integer ids.
-        """
-
-        cursor = self._connection.cursor()
-        cursor.execute("SELECT * FROM Fabrics WHERE name LIKE ?", ("%"+name_contains+"%",))
-        rows = cursor.fetchall()
-        return [row["id"] for row in rows]
-
     def get_fabric_by_id(self, fabric_id) -> Fabric:
         """Gets the fabric with the given id from the database.
 
@@ -68,6 +51,23 @@ class FabricRepository:
         return Fabric(row["name"], row["width"], row["length"],
                        row["washed"])
 
+    def get_fabric_by_name(self, name_contains: str) -> list:
+        """Gets fabrics by name from the database.
+
+        Gets fabrics with a name containing the string provided as an argument.
+
+        Args:
+            name (str): String with which the fabrics will be searched for from the database
+
+        Returns:
+            list: List of Integer ids.
+        """
+
+        cursor = self._connection.cursor()
+        cursor.execute("SELECT * FROM Fabrics WHERE name LIKE ?", ("%"+name_contains+"%",))
+        rows = cursor.fetchall()
+        return [row["id"] for row in rows]
+
     def get_fabric_by_washed(self, washed: int) -> list:
         """Gets fabrics with the given washed status from the database.
 
@@ -75,14 +75,13 @@ class FabricRepository:
             washed (int): 0 for washed, 1 for not washed
 
         Returns:
-            list: Returns a list of the fabrics with the given washed status as Fabric objects.
+            list: Returns a list of the ids of fabrics with the given washed status.
         """
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM Fabrics WHERE washed = ?", [washed])
         rows = cursor.fetchall()
 
-        return [Fabric(row["name"], row["width"], row["length"],
-                       row["washed"]) for row in rows]
+        return [row["id"] for row in rows]
 
     def add_fabric(self, fabric: Fabric):
         """Adds a fabric to the database.

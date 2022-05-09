@@ -73,6 +73,9 @@ class FabricService:
         if not fabric_ids:
             return None
         return fabric_ids
+    
+    def get_fabric_by_washed(self, washed: int):
+        pass
 
     def get_fabric_by_id(self, fabric_id: int) -> Fabric:
         """Returns the Fabric matching the given id from the database.

@@ -62,6 +62,9 @@ class FabricRepository:
         cursor.execute("SELECT * FROM Fabrics WHERE id = ?", [fabric_id])
         row = cursor.fetchone()
 
+        if not row:
+            return None
+
         return Fabric(row["name"], row["width"], row["length"],
                        row["washed"])
 

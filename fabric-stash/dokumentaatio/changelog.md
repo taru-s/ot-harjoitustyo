@@ -21,3 +21,7 @@
  - search view added to gui
    - user can search for fabrics by name
    - user can view the searched fabrics in a list
+
+### Viikko 7
+ - gui input validation
+ - search by name: search for names that contain the given string

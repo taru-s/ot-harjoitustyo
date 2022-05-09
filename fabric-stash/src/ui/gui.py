@@ -82,10 +82,10 @@ class GUI:
     
     # edit view handlers
 
-    def _handle_edit_view_save(self, fabric_id, name, width, length, washed_bool):
-        washed = 0
-        if washed_bool:
-            washed = 1
+    def _handle_edit_view_save(self, fabric_id, name, width, length, washed):
+        # washed = 0
+        # if washed_bool:
+        #     washed = 1
         self._service.edit_fabric(fabric_id,
                                   name,
                                   width,

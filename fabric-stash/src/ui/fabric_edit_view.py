@@ -19,7 +19,7 @@ class FabricEditView():
         self._name_var = tk.StringVar(value=self._fabric.name)
         self._width_var = tk.IntVar(value=self._fabric.width)
         self._length_var = tk.IntVar(value=self._fabric.length)
-        self._washed_var = tk.BooleanVar(value=self._fabric.washed) 
+        self._washed_var = tk.IntVar(value=self._fabric.washed) 
         #TODO change washed to int and checkbutton on/off values to 1 and 0
 
 
@@ -77,7 +77,7 @@ class FabricEditView():
 
         washed_label = ttk.Label(frame, text="washed")
         washed_current_label = ttk.Label(frame, text=self._washed_label_to_str(self._fabric.washed))
-        washed_entry = ttk.Checkbutton(frame, variable=self._washed_var)
+        washed_entry = ttk.Checkbutton(frame, variable=self._washed_var, onvalue=1, offvalue=0)
 
         washed_label.grid(row=40,column=0)
         washed_current_label.grid(row=40,column=1)

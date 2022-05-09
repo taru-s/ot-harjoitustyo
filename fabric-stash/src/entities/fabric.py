@@ -8,6 +8,7 @@ class Fabric:
         washed: An integer with the value 0 or 1 indicating whether
                 the fabric has been washed or not.
     """
+
     def __init__(self, name, width=0, length=0, washed=0) -> None:
         """Initializes a Fabric object.
 

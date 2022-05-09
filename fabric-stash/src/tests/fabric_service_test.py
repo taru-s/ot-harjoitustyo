@@ -32,9 +32,9 @@ class TestFabricService(unittest.TestCase):
     def test_get_all_ids_returns_ids(self):
         self.service.add_fabric("name", 100, 100, False)
         self.service.add_fabric("name", 100, 100, False)
-        
+
         returned = self.service.get_all_ids()
-        self.assertEqual([1,2,3], returned)
+        self.assertEqual([1, 2, 3], returned)
 
     def test_edit_fabric_updates_fabric_info_correctly(self):
         self.service.edit_fabric(1, "new name", 2, 2, 1)

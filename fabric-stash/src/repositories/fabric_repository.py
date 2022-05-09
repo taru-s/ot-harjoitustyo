@@ -49,7 +49,7 @@ class FabricRepository:
             return None
 
         return Fabric(row["name"], row["width"], row["length"],
-                       row["washed"])
+                      row["washed"])
 
     def get_fabric_by_name(self, name_contains: str) -> list:
         """Gets fabrics by name from the database.
@@ -64,7 +64,8 @@ class FabricRepository:
         """
 
         cursor = self._connection.cursor()
-        cursor.execute("SELECT * FROM Fabrics WHERE name LIKE ?", ("%"+name_contains+"%",))
+        cursor.execute("SELECT * FROM Fabrics WHERE name LIKE ?",
+                       ("%"+name_contains+"%",))
         rows = cursor.fetchall()
         return [row["id"] for row in rows]
 

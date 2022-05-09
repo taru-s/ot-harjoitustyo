@@ -8,6 +8,7 @@ class FabricService:
     """A class for wrapping and handling fabric database.
 
     """
+
     def __init__(self) -> None:
         self._repository = FabricRepository(get_database_connection())
 
@@ -37,7 +38,6 @@ class FabricService:
         if not isinstance(width, int) or width < 0:
             raise ValueError("width has to be an integer value >= 0")
 
-        #TODO validate fabric information types 
         fabric_info = Fabric(str(name), width, length, washed)
         self._repository.update_fabric_by_id(fabric_id, fabric_info)
 
@@ -73,7 +73,7 @@ class FabricService:
         if not fabric_ids:
             return None
         return fabric_ids
-    
+
     def get_fabric_by_washed(self, washed: int):
         pass
 

@@ -3,6 +3,7 @@ import tkinter as tk
 import tkinter.ttk as ttk
 from services.fabric_service import FabricService
 
+
 class FabricEditView():
     def __init__(self, root, fabric_id, from_add_new, handle_save, handle_delete, handle_cancel):
         self._service = FabricService()
@@ -23,7 +24,8 @@ class FabricEditView():
         self._washed_var = tk.IntVar(value=self._fabric.washed)
         self._error_var = tk.StringVar(value="")
 
-        self._save_enabled_var = tk.StringVar(value="enabled") #TODO save button enabling/disabling?
+        # TODO save button enabling/disabling?
+        self._save_enabled_var = tk.StringVar(value="enabled")
 
         self._initialize()
 
@@ -41,7 +43,6 @@ class FabricEditView():
         fabric_info = self._fabric_info_edit_frame(self._frame)
         fabric_info.grid(row=2, sticky=tk.EW)
 
-
         error_message = self._error_message(self._frame)
         error_message.grid(row=9)
 
@@ -54,40 +55,41 @@ class FabricEditView():
         header_current_label = ttk.Label(frame, text="current")
         header_new_label = ttk.Label(frame, text="new")
         header_current_label.grid(row=0, column=1)
-        header_new_label.grid(row=0,column=2)
-
+        header_new_label.grid(row=0, column=2)
 
         name_label = ttk.Label(frame, text="name")
-        current_name_label = ttk.Label(frame, text=self._fabric.name)        
+        current_name_label = ttk.Label(frame, text=self._fabric.name)
         name_entry = ttk.Entry(frame, textvariable=self._name_var)
 
-        name_label.grid(row=10,column=0)
-        current_name_label.grid(row=10,column=1)
-        name_entry.grid(row=10,column=2)
+        name_label.grid(row=10, column=0)
+        current_name_label.grid(row=10, column=1)
+        name_entry.grid(row=10, column=2)
 
         width_label = ttk.Label(frame, text="width")
         width_current_label = ttk.Label(frame, text=self._fabric.width)
         width_entry = ttk.Entry(frame, textvariable=self._width_var)
 
-        width_label.grid(row=20,column=0)
-        width_current_label.grid(row=20,column=1)
-        width_entry.grid(row=20,column=2)
+        width_label.grid(row=20, column=0)
+        width_current_label.grid(row=20, column=1)
+        width_entry.grid(row=20, column=2)
 
         length_label = ttk.Label(frame, text="length")
         length_current_label = ttk.Label(frame, text=self._fabric.length)
         length_entry = ttk.Entry(frame, textvariable=self._length_var)
 
-        length_label.grid(row=30,column=0)
-        length_current_label.grid(row=30,column=1)
-        length_entry.grid(row=30,column=2)
+        length_label.grid(row=30, column=0)
+        length_current_label.grid(row=30, column=1)
+        length_entry.grid(row=30, column=2)
 
         washed_label = ttk.Label(frame, text="washed")
-        washed_current_label = ttk.Label(frame, text=self._washed_label_to_str(self._fabric.washed))
-        washed_entry = ttk.Checkbutton(frame, variable=self._washed_var, onvalue=1, offvalue=0)
+        washed_current_label = ttk.Label(
+            frame, text=self._washed_label_to_str(self._fabric.washed))
+        washed_entry = ttk.Checkbutton(
+            frame, variable=self._washed_var, onvalue=1, offvalue=0)
 
-        washed_label.grid(row=40,column=0)
-        washed_current_label.grid(row=40,column=1)
-        washed_entry.grid(row=40,column=2)
+        washed_label.grid(row=40, column=0)
+        washed_current_label.grid(row=40, column=1)
+        washed_entry.grid(row=40, column=2)
 
         self._width_var.trace("w", self._validate_width)
         self._length_var.trace("w", self._validate_length)
@@ -102,10 +104,10 @@ class FabricEditView():
 
     def _set_error_message(self, boolean):
         if boolean:
-            self._error_var.set(f"width and length have to be a postive integers")
+            self._error_var.set(
+                f"width and length have to be a postive integers")
         else:
             self._error_var.set("")
-        
 
     def _validate_width(self, *args):
         try:
@@ -124,11 +126,10 @@ class FabricEditView():
     def _press_save_button(self):
         if self._error_var.get() == "":
             self._handle_save(self._fabric_id,
-                                self._name_var.get(),
-                                self._width_var.get(),
-                                self._length_var.get(),
-                                self._washed_var.get())
-
+                              self._name_var.get(),
+                              self._width_var.get(),
+                              self._length_var.get(),
+                              self._washed_var.get())
 
     def _button_frame(self, container):
         frame = ttk.Frame(container, padding=3)
@@ -151,7 +152,8 @@ class FabricEditView():
         button_cancel = ttk.Button(
             frame,
             text="cancel",
-            command=lambda: self._handle_cancel(self._from_add_new, self._fabric_id)
+            command=lambda: self._handle_cancel(
+                self._from_add_new, self._fabric_id)
         )
         button_cancel.grid(row=0, column=3, padx=4)
 

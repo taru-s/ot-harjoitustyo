@@ -69,11 +69,11 @@ class FabricInfoView():
         button_delete = ttk.Button(
             frame,
             text="delete",
-            command= lambda i = self._fabric_id: self._handle_delete(i)
+            command=lambda i=self._fabric_id: self._handle_delete(i)
         )
         button_delete.grid(row=0, column=1, padx=4)
 
-        #TODO change to back button, takes to list or search view depending on where user came from
+        # TODO change to back button, takes to list or search view depending on where user came from
         button_back = ttk.Button(
             frame,
             text="back",

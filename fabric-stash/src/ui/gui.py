@@ -13,6 +13,7 @@ from services.fabric_service import FabricService
 class GUI:
     """Class for managing the Graphical User Interface and handling user commands
     """
+
     def __init__(self, root):
         self._root = root
         self._current_view = None
@@ -25,16 +26,14 @@ class GUI:
         if self._current_view:
             self._current_view.destroy()
 
-
     # general handlers
 
     def _add_fabric(self):
         """Adds a 'dummy fabric' to the database, and shows it in edit view.
         """
-        self._service.add_fabric("",0,0,0)
+        self._service.add_fabric("", 0, 0, 0)
         all_ids = self._service.get_all_ids()
         self._show_fabric_edit_view(all_ids[-1], True)
-    
 
     def _delete_fabric(self, *fabric_id):
         """Asks for confirmation for deleting the given fabric.
@@ -45,12 +44,11 @@ class GUI:
         delete_confirmation = messagebox.askyesno(
             title="delete fabric",
             message=f"Are you sure you want to delete {fabric_name}?"
-            )
+        )
 
         if delete_confirmation:
             self._service.delete_fabric_by_id(fabric_id[0])
             self._show_fabric_list_view()
-
 
     # list view handlers
 
@@ -66,7 +64,6 @@ class GUI:
     def _handle_list_view_show_fabric(self, *fabric_id):
         self._show_fabric_info_view(fabric_id[0])
 
-
     # info view handlers
 
     def _handle_info_view_edit_fabric(self, *fabric_id):
@@ -76,25 +73,23 @@ class GUI:
         self._delete_fabric(fabric_id[0])
 
     def _handle_info_view_back(self):
-        #TODO change to show the list or search view depending on where the user came from
+        # TODO change to show the list or search view depending on where the user came from
         self._show_fabric_list_view()
 
-    
     # edit view handlers
 
     def _handle_edit_view_save(self, fabric_id, name, width, length, washed):
         try:
             self._service.edit_fabric(fabric_id,
-                                    name,
-                                    width,
-                                    length,
-                                    washed
-                                    )
+                                      name,
+                                      width,
+                                      length,
+                                      washed
+                                      )
             self._show_fabric_info_view(fabric_id)
         except ValueError as ex:
-            #TODO extract to error func
+            # TODO extract to error func
             print(ex)
-
 
     def _handle_edit_view_delete(self, *fabric_id):
         self._delete_fabric(fabric_id[0])
@@ -106,7 +101,6 @@ class GUI:
         else:
             self._show_fabric_info_view(fabric_id[0])
 
-    
     # search view handlers
 
     def _handle_search_view_add(self):
@@ -117,7 +111,6 @@ class GUI:
 
     def _handle_search_view_show_fabric(self, *fabric_id):
         self._show_fabric_info_view(fabric_id[0])
-
 
     # 'show view' methods
 

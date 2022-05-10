@@ -4,16 +4,17 @@
 1. Lataa ja pura releasen zip-tiedosto
 2. mene hakemistoon ot-harjoitustyo-viikko5/fabric-stash/
 3. asenna riippuvuudet ajamalla komento `poetry install` 
-4. käynnistä sovellus komennolla `poetry run invoke start`
+4. alusta tietokanta ensimmäisellä käyttökerralla ajamalla komento `poetry run invoke initialize-database`
+5. käynnistä sovellus komennolla `poetry run invoke start`
 
 ### Poetry komennot
-**tietokannan alustaminen** `poetry run invoke initialize-database`
-
 **käynnistys:** `poetry run invoke start`
 
 **testaus:** `poetry run invoke test`
 
 **testikattavuusraportti:** `poetry run invoke coverage-report`
+
+**tietokannan alustaminen:** `poetry run invoke initialize-database`
 
 **pylint tarkistus:** `poetry run invoke lint`
 

@@ -6,12 +6,11 @@ from services.fabric_service import FabricService
 
 
 class FabricListView:
-    def __init__(self, root, handle_add, handle_search, handle_logout,
+    def __init__(self, root, handle_add, handle_search,
                  handle_show_fabric):
         self._root = root
         self._handle_add = handle_add
         self._handle_search = handle_search
-        self._handle_logout = handle_logout
         self._handle_show_fabric = handle_show_fabric
         self._frame = None
 
@@ -78,12 +77,5 @@ class FabricListView:
             command=self._handle_search
         )
         button_search.grid(row=0, column=1, padx=4)
-
-        button_logout = ttk.Button(
-            frame,
-            text="log out",
-            command=self._handle_logout
-        )
-        button_logout.grid(row=0, column=3, padx=4)
 
         return frame

@@ -58,9 +58,6 @@ class GUI:
     def _handle_list_view_search(self):
         self._show_fabric_search_view()
 
-    def _handle_list_view_logout(self):
-        print("logged out")
-
     def _handle_list_view_show_fabric(self, *fabric_id):
         self._show_fabric_info_view(fabric_id[0])
 
@@ -121,7 +118,6 @@ class GUI:
             self._root,
             self._handle_list_view_add_fabric,
             self._handle_list_view_search,
-            self._handle_list_view_logout,
             self._handle_list_view_show_fabric
         )
 

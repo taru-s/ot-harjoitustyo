@@ -75,7 +75,18 @@ class FabricService:
         return fabric_ids
 
     def get_fabric_by_washed(self, washed: int):
-        pass
+        """Gets fabrics with the given washed status.
+
+        Args:
+            washed (int): 0 for washed, 1 for not washed
+
+        Returns:
+            list: Returns a list of the ids of fabrics with the given washed status.
+        """
+        fabric_ids = self._repository.get_fabric_by_washed(washed)
+        if not fabric_ids:
+            return None
+        return fabric_ids
 
     def get_fabric_by_id(self, fabric_id: int) -> Fabric:
         """Returns the Fabric matching the given id from the database.

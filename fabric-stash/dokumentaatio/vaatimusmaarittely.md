@@ -18,13 +18,9 @@ An application for managing fabrics
 ### possible additional functionality for further development:
 
 - user registration
-- register sewing projects in addition to fabrics
-- assign fabrics to projects
-- view ongoing and finished projects
-- edit project details 
-- track the completion of project: 
-  - add stages to the project
-  - mark them as done
+- more search options
+- grouping of fabrics
+- more properties for saved fabrics
 
 
 ## User Interface sketch

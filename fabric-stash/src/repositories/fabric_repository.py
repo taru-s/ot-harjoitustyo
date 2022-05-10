@@ -67,6 +67,7 @@ class FabricRepository:
         cursor.execute("SELECT * FROM Fabrics WHERE name LIKE ?",
                        ("%"+name_contains+"%",))
         rows = cursor.fetchall()
+
         return [row["id"] for row in rows]
 
     def get_fabric_by_washed(self, washed: int) -> list:

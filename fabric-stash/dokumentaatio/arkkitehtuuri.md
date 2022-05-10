@@ -8,9 +8,10 @@ The application is structured with a three tier architecture, with separate laye
  - repositories
  - entities
 
-In addition there are directories for unit test code and the database files.
 
-The UI pacage consists of the classes for presenting the Graphic User Interface and handling the user commands. The services pacage contains a class for handling the applications logic, while the repositories pacage contains a class for managing saving and retrieving the data in the database. Entities contains a Fabric class for encapsulaiton and representation of fabric information.
+The UI pacage consists of the classes for presenting the Graphic User Interface and handling the user commands. The services package contains a class for handling the application logic, while the repositories pacage contains a class for managing saving and retrieving the data in the database. Entities contains a Fabric class for encapsulaiton and representation of fabric information.
+
+In addition there are directories for unit test code and the database files.
 
 
 ```mermaid

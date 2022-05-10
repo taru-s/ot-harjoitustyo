@@ -58,36 +58,17 @@ class Fabric:
     def name(self):
         return self._name
 
-    @name.setter
-    def name(self, name):
-        self._name = name
-
     @property
     def width(self):
         return self._width
-
-    @width.setter
-    def width(self, width: int):
-        if isinstance(width, int):
-            self._width = width
 
     @property
     def length(self):
         return self._length
 
-    @length.setter
-    def length(self, length: int):
-        if isinstance(length, int):
-            self._length = length
-
     @property
     def washed(self):
         return self._washed
-
-    @washed.setter
-    def washed(self, washed):
-        if washed in (1, 0):
-            self._washed = washed
 
     def get_values(self):
         """Returns values of a Fabric object.

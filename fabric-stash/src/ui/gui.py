@@ -3,11 +3,11 @@
 from tkinter import messagebox
 
 
+from services.fabric_service import FabricService
 from .fabric_list_view import FabricListView
 from .fabric_info_view import FabricInfoView
 from .fabric_edit_view import FabricEditView
 from .fabric_search_view import FabricSearchView
-from services.fabric_service import FabricService
 
 
 class GUI:
@@ -76,17 +76,13 @@ class GUI:
     # edit view handlers
 
     def _handle_edit_view_save(self, fabric_id, name, width, length, washed):
-        try:
-            self._service.edit_fabric(fabric_id,
-                                      name,
-                                      width,
-                                      length,
-                                      washed
-                                      )
-            self._show_fabric_info_view(fabric_id)
-        except ValueError as ex:
-            # TODO extract to error func
-            print(ex)
+        self._service.edit_fabric(fabric_id,
+                                  name,
+                                  width,
+                                  length,
+                                  washed
+                                  )
+        self._show_fabric_info_view(fabric_id)
 
     def _handle_edit_view_delete(self, *fabric_id):
         self._delete_fabric(fabric_id[0])

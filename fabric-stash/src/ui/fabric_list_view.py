@@ -1,6 +1,5 @@
 import tkinter as tk
 import tkinter.ttk as ttk
-from tkinter import constants
 
 from services.fabric_service import FabricService
 

@@ -91,33 +91,27 @@ class FabricEditView():
         washed_current_label.grid(row=40, column=1)
         washed_entry.grid(row=40, column=2)
 
-        self._width_var.trace("w", self._validate_width)
-        self._length_var.trace("w", self._validate_length)
+        self._width_var.trace("w", self._validate_width_and_length)
+        self._length_var.trace("w", self._validate_width_and_length)
 
         return frame
 
     def _error_message(self, container):
         frame = ttk.Frame(container)
-        error_label = ttk.Label(frame, textvariable=self._error_var)
+        error_label = ttk.Label(frame, textvariable=self._error_var, foreground="red")
         error_label.grid()
         return frame
 
     def _set_error_message(self, boolean):
         if boolean:
             self._error_var.set(
-                f"width and length have to be a postive integers")
+                "width and length have to be postive integers")
         else:
             self._error_var.set("")
 
-    def _validate_width(self, *args):
+    def _validate_width_and_length(self, *args):
         try:
             self._width_var.get()
-            self._set_error_message(False)
-        except:
-            self._set_error_message(True)
-
-    def _validate_length(self, *args):
-        try:
             self._length_var.get()
             self._set_error_message(False)
         except:

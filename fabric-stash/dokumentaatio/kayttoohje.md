@@ -7,6 +7,8 @@
 4. käynnistä sovellus komennolla `poetry run invoke start`
 
 ### Poetry komennot
+**tietokannan alustaminen** `poetry run invoke initialize-database`
+
 **käynnistys:** `poetry run invoke start`
 
 **testaus:** `poetry run invoke test`

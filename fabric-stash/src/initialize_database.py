@@ -2,6 +2,11 @@ from database_connection import get_database_connection
 
 
 def drop_tables(connection):
+    """Drops the sqlite database table Fabrics, if it exists.
+
+    Args:
+        connection (): sqlite3 database connection
+    """
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -12,6 +17,11 @@ def drop_tables(connection):
 
 
 def create_tables(connection):
+    """Creates sqlite database table Fabrics.
+
+    Args:
+        connection (): sqlite3 database connection
+    """
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -28,6 +38,11 @@ def create_tables(connection):
 
 
 def initialize_database():
+    """Initializes sqlite database.
+
+    Gets the database connection from the database_connection.py file.
+    Drops exsisting tables and creates new tables.
+    """
     connection = get_database_connection()
     drop_tables(connection)
     create_tables(connection)

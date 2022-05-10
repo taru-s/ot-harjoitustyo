@@ -1,3 +1,10 @@
+    """Establishes the sqlite3 database connection.
+
+    Gets the file name from environment or restorts to the default file name.
+
+    Provides the funcion get_database_connection(), which returns the database connection.
+    """
+
 import os
 import sqlite3
 

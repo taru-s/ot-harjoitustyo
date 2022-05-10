@@ -6,7 +6,7 @@ class TestFabricService(unittest.TestCase):
     def setUp(self) -> None:
         initialize_database()
         self.service = FabricService()
-        # self.service.delete_all()
+        self.service.delete_all()
         self.service.add_fabric("name", 100, 100, False)
 
     def test_added_fabric_returned(self):

@@ -22,9 +22,3 @@ An application for managing fabrics
 - more search options
 - grouping of fabrics
 - more properties for saved fabrics
-
-
-## User Interface sketch
-
-![UI sketch of the fabric stash manager application's basic functionality](https://github.com/taru-s/ot-harjoitustyo/blob/master/fabric-stash/dokumentaatio/kuvat/user-interface-sketch.png)
-

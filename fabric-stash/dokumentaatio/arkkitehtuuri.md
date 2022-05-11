@@ -135,6 +135,7 @@ Other functionality in the program follows similar patterns: the user clicks a b
 
 
 ### Possible structural improvements
-The code for the graphic user interface could be refactored to reduce repeated code accross the different views. 
+The code for the graphic user interface could be refactored to reduce repeated code accross the different views, for example by creating a parent class or an interface for all the GUI view classes. 
+
 The service and repository classes also contain some redundancy in the methods for fetching data from the database, which could become especially problematic were the amount of fabric properties increased.
 

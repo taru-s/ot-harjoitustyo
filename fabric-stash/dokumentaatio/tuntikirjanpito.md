@@ -15,5 +15,6 @@
 | 03.05. |2| dokumentaatio, doc-string
 | 09.05. |2| gui input validaatio, haku nimen osan perusteella |
 | 10.05. |1| testi database, dokumentaatio |
-| yht.|35| |
+| 11.05. |2| haku nimen ja pesty-statuksen perusteella, testejä, dokumentaatio |
+| yht.  |37| |
 

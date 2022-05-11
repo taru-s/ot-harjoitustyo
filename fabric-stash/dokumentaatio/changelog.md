@@ -24,4 +24,6 @@
 
 ### Viikko 7
  - gui input validation
- - search by name: search for names that contain the given string
+ - search: 
+   - search by names that contain the given string
+   - search by washed status

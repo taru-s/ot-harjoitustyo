@@ -1,7 +1,7 @@
-from ast import arg
 import tkinter as tk
 import tkinter.ttk as ttk
 from services.fabric_service import FabricService
+from entities.fabric import Fabric
 
 
 class FabricEditView():
@@ -83,7 +83,7 @@ class FabricEditView():
 
         washed_label = ttk.Label(frame, text="washed")
         washed_current_label = ttk.Label(
-            frame, text=self._washed_label_to_str(self._fabric.washed))
+            frame, text=self._fabric.washed_to_str())
         washed_entry = ttk.Checkbutton(
             frame, variable=self._washed_var, onvalue=1, offvalue=0)
 
@@ -152,11 +152,3 @@ class FabricEditView():
         button_cancel.grid(row=0, column=3, padx=4)
 
         return frame
-
-    def _washed_label_to_str(self, int_value):
-        if int_value == 1:
-            return "yes"
-        elif int_value == 0:
-            return "no"
-        else:
-            return "n/a"

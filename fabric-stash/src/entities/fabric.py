@@ -78,3 +78,24 @@ class Fabric:
         """
         values = [self.name, self.width, self.length, self.washed]
         return values
+
+    def washed_to_str(self):
+        """Returns washed int value as a string.
+
+        1 = "yes"
+        0 = "no"
+
+        othewise returns "n/a"
+
+        Args:
+            int_value (int): Fabric washed value as int
+
+        Returns:
+            str: string representation of int value representing fabric washed status.
+        """
+        if self.washed == 1:
+            return "yes"
+        elif self.washed == 0:
+            return "no"
+        else:
+            return "n/a"

@@ -42,8 +42,11 @@ class FabricInfoView():
         fabric_values = self._fabric.get_values()
         properties = []
 
-        for i in range(len(property_names)):
-            properties.append(f"{property_names[i]}: {fabric_values[i]}")
+        for i, name in enumerate(property_names):
+            if name == "washed":
+                properties.append(f"{name}: {self._fabric.washed_to_str()}")
+            else:
+                properties.append(f"{name}: {fabric_values[i]}")
 
         property_fields = []
 

@@ -58,8 +58,14 @@ class TestFabricService(unittest.TestCase):
         returned = self.service.search_fabrics("t", 1)
         self.assertEqual([2], returned)
 
-    def test_search_fabrics_returns_none_by_name_and_washed(self):
+    def test_search_fabrics_returns_none_by_name_and_washed_not_found(self):
         self.service.add_fabric("test", 100, 200, 1)
         self.service.add_fabric("test", 100, 200, 0)
         returned = self.service.search_fabrics("n", 1)
         self.assertEqual(None, returned)
+
+    def test_search_fabrics_returns_all_when_name_and_washed_empty(self):
+        self.service.add_fabric("test", 100, 200, 1)
+        self.service.add_fabric("test", 100, 200, 0)
+        returned = self.service.search_fabrics("", -1)
+        self.assertEqual([1,2,3], returned)

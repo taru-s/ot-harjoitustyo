@@ -89,7 +89,8 @@ class FabricService:
         """Searches for fabrics according to name and washed status.
 
         Name has to contain the string arg name_contains. Is empty, name can be anything.
-        Washed status has to match the int arg washed. If washed = -1, washed status can be anything.
+        Washed status has to match the int arg washed.
+        If washed = -1, washed status can be anything.
 
         Args:
             name_contains (str): name has to contain this string
@@ -99,15 +100,23 @@ class FabricService:
             list: List of the fabric ids of fabrics matching the search criteria.
                     Returns None if no matches found.
         """
-        if washed == -1:
+        name_contains = name_contains.strip()
+        if washed == -1 and not name_contains:
+            return self._repository.get_all_ids()
+        elif washed == -1:
             return self.get_fabrics_by_name(name_contains)
         elif not name_contains:
             return self.get_fabrics_by_washed(washed)
         else:
             matching = []
-            for id in self.get_fabrics_by_name(name_contains):
-                if self.get_fabric_by_id(id).washed == washed:
-                    matching.append(id)
+            fabrics = self.get_fabrics_by_name(name_contains)
+            if not fabrics:
+                return None
+
+            for i in fabrics:
+                if self.get_fabric_by_id(i).washed == washed:
+                    matching.append(i)
+
             if not matching:
                 return None
             return matching

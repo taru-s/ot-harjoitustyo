@@ -128,3 +128,11 @@ When a user clicks on a button to add a new fabric, the following commands are e
 ```
 When the user presses the add fabric button, a new 'dummy fabric' is created to the database. The GUI then shows this fabrics information in the edit view. After this, the program proceeds similarly as depicted in the sequence diagram for editing information of a saved fabric.
 
+
+Other functionality in the program follows similar patterns: the user clicks a button, UI handlers call the associated service methods which handles fetching or saving data in the database via the repository class. The data or changes to the data are then presented to the user via the UI.
+
+
+### Possible structural improvements
+The code for the graphic user interface could be refactored to reduce repeated code accross the different views. 
+The service and repository classes also contain some redundancy in the methods for fetching data from the database, which could become especially problematic were the amount of fabric properties increased.
+

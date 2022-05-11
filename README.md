@@ -22,7 +22,7 @@ An application for managing fabrics and their information. The user can save, ed
 
 ### Releasen asennus
 1. Lataa ja pura releasen zip-tiedosto
-2. mene hakemistoon ot-harjoitustyo-viikko5/fabric-stash/
+2. mene hakemistoon releasen-nimi/fabric-stash/
 3. asenna riippuvuudet ajamalla komento `poetry install` 
 4. käynnistä sovellus komennolla `poetry run invoke start`
 

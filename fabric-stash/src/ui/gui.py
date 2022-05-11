@@ -59,7 +59,7 @@ class GUI:
         self._show_fabric_search_view()
 
     def _handle_list_view_show_fabric(self, *fabric_id):
-        self._show_fabric_info_view(fabric_id[0])
+        self._show_fabric_info_view(fabric_id[0], False)
 
     # info view handlers
 
@@ -69,9 +69,13 @@ class GUI:
     def _handle_info_view_delete_fabric(self, *fabric_id):
         self._delete_fabric(fabric_id[0])
 
-    def _handle_info_view_back(self):
-        # TODO change to show the list or search view depending on where the user came from
-        self._show_fabric_list_view()
+    def _handle_info_view_back(self, from_search):
+        if from_search:
+            self._show_fabric_search_view()
+        else:
+            self._show_fabric_list_view()
+
+        # TODO change to show the list or search view depending on where the user came from 
 
     # edit view handlers
 
@@ -103,7 +107,7 @@ class GUI:
         self._show_fabric_list_view()
 
     def _handle_search_view_show_fabric(self, *fabric_id):
-        self._show_fabric_info_view(fabric_id[0])
+        self._show_fabric_info_view(fabric_id[0], True)
 
     # 'show view' methods
 
@@ -119,12 +123,13 @@ class GUI:
 
         self._current_view.pack()
 
-    def _show_fabric_info_view(self, fabric_id):
+    def _show_fabric_info_view(self, fabric_id, from_search: bool):
         self._hide_current_view()
 
         self._current_view = FabricInfoView(
             self._root,
             fabric_id,
+            from_search,
             self._handle_info_view_edit_fabric,
             self._handle_info_view_delete_fabric,
             self._handle_info_view_back

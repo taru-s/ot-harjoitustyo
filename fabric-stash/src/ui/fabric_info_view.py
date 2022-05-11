@@ -5,7 +5,7 @@ from services.fabric_service import FabricService
 
 
 class FabricInfoView():
-    def __init__(self, root, fabric_id, handle_edit, handle_delete, handle_back):
+    def __init__(self, root, fabric_id, from_search, handle_edit, handle_delete, handle_back):
         self._service = FabricService()
         self._root = root
         self._fabric_id = fabric_id
@@ -14,6 +14,8 @@ class FabricInfoView():
         self._handle_delete = handle_delete
         self._handle_back = handle_back
         self._frame = None
+
+        self._from_search = from_search
 
         self._initialize()
 
@@ -80,7 +82,7 @@ class FabricInfoView():
         button_back = ttk.Button(
             frame,
             text="back",
-            command=self._handle_back
+            command=lambda: self._handle_back(self._from_search)
         )
         button_back.grid(row=0, column=3, padx=4)
 

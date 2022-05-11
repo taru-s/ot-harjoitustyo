@@ -1,6 +1,7 @@
 from tkinter import Tk
 from ui.gui import GUI
 
+
 def main():
     window = Tk()
     window.title("Fabric stash")
@@ -9,5 +10,6 @@ def main():
     app_ui.start()
 
     window.mainloop()
+
 
 main()

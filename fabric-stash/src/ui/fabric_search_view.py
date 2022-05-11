@@ -48,7 +48,8 @@ class FabricSearchView:
         name_contains_label = ttk.Label(frame, text="name contains:")
         name_contains_label.grid(row=1, column=0)
 
-        search_text_entry = ttk.Entry(frame, textvariable=self._search_name_var)
+        search_text_entry = ttk.Entry(
+            frame, textvariable=self._search_name_var)
         search_text_entry.grid(row=1, column=1, columnspan=2)
 
         washed_label = ttk.Label(frame, text="washed:")

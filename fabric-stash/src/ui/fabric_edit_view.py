@@ -98,7 +98,8 @@ class FabricEditView():
 
     def _error_message(self, container):
         frame = ttk.Frame(container)
-        error_label = ttk.Label(frame, textvariable=self._error_var, foreground="red")
+        error_label = ttk.Label(
+            frame, textvariable=self._error_var, foreground="red")
         error_label.grid()
         return frame
 

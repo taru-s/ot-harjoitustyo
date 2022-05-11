@@ -2,6 +2,7 @@ import unittest
 from services.fabric_service import FabricService
 from initialize_database import initialize_database
 
+
 class TestFabricService(unittest.TestCase):
     def setUp(self) -> None:
         initialize_database()
@@ -68,4 +69,4 @@ class TestFabricService(unittest.TestCase):
         self.service.add_fabric("test", 100, 200, 1)
         self.service.add_fabric("test", 100, 200, 0)
         returned = self.service.search_fabrics("", -1)
-        self.assertEqual([1,2,3], returned)
+        self.assertEqual([1, 2, 3], returned)

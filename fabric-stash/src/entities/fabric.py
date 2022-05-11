@@ -95,7 +95,6 @@ class Fabric:
         """
         if self.washed == 1:
             return "yes"
-        elif self.washed == 0:
+        if self.washed == 0:
             return "no"
-        else:
-            return "n/a"
+        return "n/a"

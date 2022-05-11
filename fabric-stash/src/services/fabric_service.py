@@ -103,24 +103,23 @@ class FabricService:
         name_contains = name_contains.strip()
         if washed == -1 and not name_contains:
             return self._repository.get_all_ids()
-        elif washed == -1:
+        if washed == -1:
             return self.get_fabrics_by_name(name_contains)
-        elif not name_contains:
+        if not name_contains:
             return self.get_fabrics_by_washed(washed)
-        else:
-            matching = []
-            fabrics = self.get_fabrics_by_name(name_contains)
-            if not fabrics:
-                return None
 
-            for i in fabrics:
-                if self.get_fabric_by_id(i).washed == washed:
-                    matching.append(i)
+        matching = []
+        fabrics = self.get_fabrics_by_name(name_contains)
+        if not fabrics:
+            return None
 
-            if not matching:
-                return None
-            return matching
+        for i in fabrics:
+            if self.get_fabric_by_id(i).washed == washed:
+                matching.append(i)
 
+        if not matching:
+            return None
+        return matching
 
     def get_fabric_by_id(self, fabric_id: int) -> Fabric:
         """Returns the Fabric matching the given id from the database.

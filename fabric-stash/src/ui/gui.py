@@ -89,7 +89,15 @@ class GUI:
     def _handle_edit_view_delete(self, *fabric_id):
         self._delete_fabric(fabric_id[0])
 
-    def _handle_edit_view_cancel(self, from_add_new, *fabric_id):
+    def _handle_edit_view_cancel(self, from_add_new: bool, *fabric_id):
+        """Show the previous view from edit view.
+
+        If the user came from adding a new fabric, returns to the list view.
+        Otherwise returns to showing the fabric info view.
+
+        Args:
+            from_add_new (bool): Did the user come to the edit view from clicking the 'add new' -button?
+        """
         if from_add_new:
             self._service.delete_fabric_by_id(fabric_id[0])
             self._show_fabric_list_view()

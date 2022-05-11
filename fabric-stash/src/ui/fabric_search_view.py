@@ -43,6 +43,14 @@ class FabricSearchView:
         buttons.grid(row=10)
 
     def _search_frame(self, container):
+        """Constructs the search input frame.
+
+        Args:
+            container (Frame): The frame to which the search frame will be added.
+
+        Returns:
+            Frame: Frame containing the search inputs.
+        """
         frame = ttk.Frame(container, padding=3)
 
         name_contains_label = ttk.Label(frame, text="name contains:")
@@ -76,28 +84,15 @@ class FabricSearchView:
         frame = ttk.Frame(container, padding=3)
         return frame
 
-    def _button_frame(self, container):
-        frame = ttk.Frame(container, padding=3)
-
-        button_add = ttk.Button(
-            frame,
-            text="add fabric",
-            command=self._handle_add
-        )
-        button_add.grid(row=0, column=0, padx=4)
-
-        button_list = ttk.Button(
-            frame,
-            text="list",
-            command=self._handle_list
-        )
-        button_list.grid(row=0, column=3, padx=4)
-
-        return frame
-
-    def _update_fabric_list(self):
+    def _destroy_fabric_list(self):
         for widget in self._fabric_list_frame.winfo_children():
             widget.destroy()
+
+    def _update_fabric_list(self):
+        """Updates the fabric list based on the search terms.
+        """
+        self._destroy_fabric_list()
+        
         search_term = self._search_name_var.get()
         washed = int(self._search_washed_var.get())
         fabric_ids = self._service.search_fabrics(search_term, washed)
@@ -117,3 +112,30 @@ class FabricSearchView:
                     command=lambda i=fabric_id: self._handle_show_fabric(i)
                 )
                 fabric_button.grid(row=fabric_id)
+
+    def _button_frame(self, container):
+        """Constructs the menu buttons on the bottom of the view.
+
+        Args:
+            container (Frame): The frame to which the list frame will be added.
+
+        Returns:
+            frame: The frame containing the buttons.
+        """
+        frame = ttk.Frame(container, padding=3)
+
+        button_add = ttk.Button(
+            frame,
+            text="add fabric",
+            command=self._handle_add
+        )
+        button_add.grid(row=0, column=0, padx=4)
+
+        button_list = ttk.Button(
+            frame,
+            text="list",
+            command=self._handle_list
+        )
+        button_list.grid(row=0, column=3, padx=4)
+
+        return frame

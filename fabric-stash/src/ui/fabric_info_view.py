@@ -38,6 +38,14 @@ class FabricInfoView():
         buttons.grid(row=10)
 
     def _initialize_fabric_info_frame(self, container):
+        """Creates the frame containing the fabric information.
+
+        Args:
+            container (Frame): The frame to which the info frame will be added.
+
+        Returns:
+            Frame: Frame containing the fabric information labels.
+        """
         frame = ttk.Frame(container, padding=3)
 
         property_names = list(Fabric.properties_and_types().keys())
@@ -62,6 +70,14 @@ class FabricInfoView():
         return frame
 
     def _initialize_button_frame(self, container):
+        """Constructs the menu buttons on the bottom of the view.
+
+        Args:
+            container (Frame): The frame to which the list frame will be added.
+
+        Returns:
+            frame: The frame containing the buttons.
+        """
         frame = ttk.Frame(container, padding=3)
 
         button_edit = ttk.Button(

@@ -48,6 +48,14 @@ class FabricEditView():
         buttons.grid(row=10)
 
     def _fabric_info_edit_frame(self, container):
+        """Creates the frame containing the fabric information and edit fields.
+
+        Args:
+            container (Frame): The frame to which the info frame will be added.
+
+        Returns:
+            Frame: Frame containing the fabric information labels and entries.
+        """
         frame = ttk.Frame(container, padding=3)
 
         header_current_label = ttk.Label(frame, text="current")
@@ -95,6 +103,14 @@ class FabricEditView():
         return frame
 
     def _error_message(self, container):
+        """Creates a Frame containing the input error message.
+
+        Args:
+            container (Frame): The frame to which the error message frame will be added.
+
+        Returns:
+            Frame: Frame containing the contents.
+        """
         frame = ttk.Frame(container)
         error_label = ttk.Label(
             frame, textvariable=self._error_var, foreground="red")
@@ -102,6 +118,12 @@ class FabricEditView():
         return frame
 
     def _set_error_message(self, boolean):
+        """Show ir hide the input error message.
+
+        Args:
+            boolean (bool): Boolean varieble thelling should the error message be
+                    shown (True) or hidden (False.)
+        """
         if boolean:
             self._error_var.set(
                 "width and length have to be postive integers")
@@ -117,6 +139,8 @@ class FabricEditView():
             self._set_error_message(True)
 
     def _press_save_button(self):
+        """Allows the save handler to be caaled only if user entered inputs are valid.
+        """
         if self._error_var.get() == "":
             self._handle_save(self._fabric_id,
                               self._name_var.get(),
@@ -125,6 +149,14 @@ class FabricEditView():
                               self._washed_var.get())
 
     def _button_frame(self, container):
+        """Constructs the menu buttons on the bottom of the view.
+
+        Args:
+            container (Frame): The frame to which the list frame will be added.
+
+        Returns:
+            frame: The frame containing the buttons.
+        """
         frame = ttk.Frame(container, padding=3)
 
         button_save = ttk.Button(

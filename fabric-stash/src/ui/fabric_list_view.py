@@ -37,6 +37,14 @@ class FabricListView:
         buttons.grid(row=10)
 
     def _fabric_frame(self, container):
+        """Constructs the fabric list.
+
+        Args:
+            container (Frame): The frame to which the list frame will be added.
+
+        Returns:
+            frame: The frame containing the fabric list.
+        """
         frame = ttk.Frame(container, padding=3)
 
         fabric_ids = self._service.get_all_ids()
@@ -61,6 +69,14 @@ class FabricListView:
         return frame
 
     def _button_frame(self, container):
+        """Constructs the menu buttons on the bottom of the view.
+
+        Args:
+            container (Frame): The frame to which the list frame will be added.
+
+        Returns:
+            frame: The frame containing the buttons.
+        """
         frame = ttk.Frame(container, padding=3)
 
         button_add = ttk.Button(

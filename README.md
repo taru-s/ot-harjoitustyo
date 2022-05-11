@@ -6,7 +6,7 @@ An application for managing fabrics and their information. The user can save, ed
 
 ## Dokumentaatio
 
-[Käyttöohje](https://github.com/taru-s/ot-harjoitustyo/blob/master/fabric-stash/dokumentaatio/kayttoohje.md)
+[käyttöohje](https://github.com/taru-s/ot-harjoitustyo/blob/master/fabric-stash/dokumentaatio/kayttoohje.md)
 
 [vaatimusmaarittely](https://github.com/taru-s/ot-harjoitustyo/blob/master/fabric-stash/dokumentaatio/vaatimusmaarittely.md)
 

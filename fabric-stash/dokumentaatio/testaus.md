@@ -18,6 +18,7 @@ Sovelluksen toimintaa ja käyttöliittymää on testattu manuaalisesti.
 #### Asennus
 Sovelluksen asennus on testattu käyttöohjeen mukaan Linux-ympäristössä.
 #### Toiminnallisuudet
-Kaikkia sovelluksen toiminnallisuuksia ja niihin liittyviä osia on testattu. Sovelluksen toimintaa on testattu myös virheellisillä syötteillä.
+Kaikkia sovelluksen käyttöliittymästä käytettäviä toiminnallisuuksia on testattu käsin. Sovelluksen toimintaa on testattu myös virheellisillä syötteillä.
 
 ### Testauksen puutteet
+Tietokannan alustamista ei ole erikseen testattu.

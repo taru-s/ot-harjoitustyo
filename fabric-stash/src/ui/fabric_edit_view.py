@@ -118,11 +118,11 @@ class FabricEditView():
         return frame
 
     def _set_error_message(self, boolean):
-        """Show ir hide the input error message.
+        """Show or hide the input error message.
 
         Args:
-            boolean (bool): Boolean varieble thelling should the error message be
-                    shown (True) or hidden (False.)
+            boolean (bool): Boolean variable telling should the error message be
+                    shown (True) or hidden (False).
         """
         if boolean:
             self._error_var.set(
@@ -134,14 +134,17 @@ class FabricEditView():
         """Trace function for width and length Entries.
         """
         try:
-            self._width_var.get()
-            self._length_var.get()
-            self._set_error_message(False)
+            width = self._width_var.get()
+            length = self._length_var.get()
+            if width < 0 or length < 0:
+                self._error_message(True)
+            else:
+                self._set_error_message(False)
         except:
             self._set_error_message(True)
 
     def _press_save_button(self):
-        """Allows the save handler to be caaled only if user entered inputs are valid.
+        """Allows the save handler to be called only if user entered inputs are valid.
         """
         if self._error_var.get() == "":
             self._handle_save(self._fabric_id,

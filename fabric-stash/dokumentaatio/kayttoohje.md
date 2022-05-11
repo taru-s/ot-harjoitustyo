@@ -22,7 +22,7 @@
 
 Sovellus käynnistyy listanäkymään, jossa näet kaikki tallennetut kankaat. Jos kankaita ei ole vielä tallennettu, näkyy listassa vain painike uuden kankaan lisäämiseen.
 
-Lisää uusi kangas painamalla "add fabric" painiketta. Tämän jälkeen voit syöttää uuden kankaan tiedot. Painamalla "save" tiedot tallentuvat ja näet tallennetut tiedot. Painikkeesta "delete" voit poistaa tallennetun kankaan. Sovellus varmistaa, haluatko todella poistaa kankaan. Valitsemalla "yes", tallennettu kangas ja kaikki sen tiedto poistetaan pysyvästi.
+Lisää uusi kangas painamalla "add fabric" painiketta. Tämän jälkeen voit syöttää uuden kankaan tiedot. Painamalla "save" tiedot tallentuvat ja näet tallennetut tiedot. Painikkeesta "delete" voit poistaa tallennetun kankaan. Sovellus varmistaa, haluatko todella poistaa kankaan. Valitsemalla "yes", tallennettu kangas ja kaikki sen tiedot poistetaan pysyvästi.
 
 Listanäkymästä voit kankaan nimeä painamalla katsoa sen tarkempia tietoja, ja halutessasi muokata niitä painikkeesta "edit".
 

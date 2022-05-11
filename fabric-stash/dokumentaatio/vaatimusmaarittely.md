@@ -14,6 +14,7 @@ An application for managing fabrics
 - delete registered fabrics
 - search and filter fabrics based on certain properties 
   - name
+  - washed status
 
 ### possible additional functionality for further development:
 

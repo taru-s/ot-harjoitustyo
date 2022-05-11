@@ -2,7 +2,7 @@
 
 ### Asentaminen
 1. Lataa ja pura releasen zip-tiedosto
-2. mene hakemistoon /fabric-stash/
+2. mene hakemistoon *releasen nimi*/fabric-stash/
 3. asenna riippuvuudet ajamalla komento `poetry install` 
 4. alusta tietokanta ensimmäisellä käyttökerralla ajamalla komento `poetry run invoke initialize-database`
 5. käynnistä sovellus komennolla `poetry run invoke start`

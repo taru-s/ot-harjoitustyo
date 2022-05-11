@@ -35,11 +35,13 @@ In addition there are directories for unit test code and the database files.
 
 ## User interface
 
-The user interface contains the following views
+The user interface contains the following views as their own classes:
  - List view: list of all the saved fabrics
  - Info view: list of the information of one fabric
  - Edit view: view for editing the information of new or saved fabric
  - Search view: view for searching for fabrics based on different properties
+
+In addition there is a general GUI class for the event handlers and handling transitions between the different views.
 
 
 ## Data storage

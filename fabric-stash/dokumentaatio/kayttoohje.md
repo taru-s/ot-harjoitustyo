@@ -26,4 +26,4 @@ Lisää uusi kangas painamalla "add fabric" painiketta. Tämän jälkeen voit sy
 
 Listanäkymästä voit kankaan nimeä painamalla katsoa sen tarkempia tietoja, ja halutessasi muokata niitä painikkeesta "edit".
 
-Listanäkymän "search" painikkeesta voit hakea kankaita nimen perusteella.
+Listanäkymän "search" painikkeesta voit hakea kankaita nimen tai sen osan perusteella, sekä sen perusteella, onko kangas merkitty pestyksi vai ei.

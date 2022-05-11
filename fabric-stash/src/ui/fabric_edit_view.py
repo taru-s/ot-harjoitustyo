@@ -131,6 +131,8 @@ class FabricEditView():
             self._error_var.set("")
 
     def _validate_width_and_length(self, *args):
+        """Trace function for width and length Entries.
+        """
         try:
             self._width_var.get()
             self._length_var.get()

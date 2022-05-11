@@ -35,11 +35,13 @@ In addition there are directories for unit test code and the database files.
 
 ## User interface
 
-The user interface contains the following views
+The user interface contains the following views as their own classes:
  - List view: list of all the saved fabrics
  - Info view: list of the information of one fabric
  - Edit view: view for editing the information of new or saved fabric
  - Search view: view for searching for fabrics based on different properties
+
+In addition there is a general GUI class for the event handlers and handling transitions between the different views.
 
 
 ## Data storage
@@ -127,4 +129,13 @@ When a user clicks on a button to add a new fabric, the following commands are e
       GUI ->> GUI: _show_fabric_edit_view(all_ids[-1])   
 ```
 When the user presses the add fabric button, a new 'dummy fabric' is created to the database. The GUI then shows this fabrics information in the edit view. After this, the program proceeds similarly as depicted in the sequence diagram for editing information of a saved fabric.
+
+
+Other functionality in the program follows similar patterns: the user clicks a button, UI handlers call the associated service methods which handles fetching or saving data in the database via the repository class. The data or changes to the data are then presented to the user via the UI.
+
+
+### Possible structural improvements
+The code for the graphic user interface could be refactored to reduce repeated code accross the different views, for example by creating a parent class or an interface for all the GUI view classes. 
+
+The service and repository classes also contain some redundancy in the methods for fetching data from the database, which could become especially problematic were the amount of fabric properties increased.
 

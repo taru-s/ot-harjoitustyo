@@ -1,7 +1,6 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 from services.fabric_service import FabricService
-from entities.fabric import Fabric
 
 
 class FabricEditView():
@@ -24,7 +23,6 @@ class FabricEditView():
         self._washed_var = tk.IntVar(value=self._fabric.washed)
         self._error_var = tk.StringVar(value="")
 
-        # TODO save button enabling/disabling?
         self._save_enabled_var = tk.StringVar(value="enabled")
 
         self._initialize()
@@ -132,7 +130,7 @@ class FabricEditView():
         button_save = ttk.Button(
             frame,
             text="save",
-            command=lambda: self._press_save_button(),
+            command=self._press_save_button,
             state=self._save_enabled_var.get
         )
         button_save.grid(row=0, column=0, padx=4)

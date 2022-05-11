@@ -4,10 +4,10 @@ from tkinter import messagebox
 
 
 from services.fabric_service import FabricService
-from .fabric_list_view import FabricListView
-from .fabric_info_view import FabricInfoView
-from .fabric_edit_view import FabricEditView
-from .fabric_search_view import FabricSearchView
+from ui.fabric_list_view import FabricListView
+from ui.fabric_info_view import FabricInfoView
+from ui.fabric_edit_view import FabricEditView
+from ui.fabric_search_view import FabricSearchView
 
 
 class GUI:
@@ -75,8 +75,6 @@ class GUI:
         else:
             self._show_fabric_list_view()
 
-        # TODO change to show the list or search view depending on where the user came from 
-
     # edit view handlers
 
     def _handle_edit_view_save(self, fabric_id, name, width, length, washed):
@@ -86,7 +84,7 @@ class GUI:
                                   length,
                                   washed
                                   )
-        self._show_fabric_info_view(fabric_id)
+        self._show_fabric_info_view(fabric_id, False)
 
     def _handle_edit_view_delete(self, *fabric_id):
         self._delete_fabric(fabric_id[0])
@@ -96,7 +94,7 @@ class GUI:
             self._service.delete_fabric_by_id(fabric_id[0])
             self._show_fabric_list_view()
         else:
-            self._show_fabric_info_view(fabric_id[0])
+            self._show_fabric_info_view(fabric_id[0], False)
 
     # search view handlers
 

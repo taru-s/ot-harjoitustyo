@@ -56,8 +56,8 @@ class FabricInfoView():
             label = ttk.Label(frame, text=prop)
             property_fields.append(label)
 
-        for i in range(len(property_fields)):
-            property_fields[i].grid(row=i)
+        for i, name in enumerate(property_fields):
+            name.grid(row=i)
 
         return frame
 
@@ -78,7 +78,6 @@ class FabricInfoView():
         )
         button_delete.grid(row=0, column=1, padx=4)
 
-        # TODO change to back button, takes to list or search view depending on where user came from
         button_back = ttk.Button(
             frame,
             text="back",

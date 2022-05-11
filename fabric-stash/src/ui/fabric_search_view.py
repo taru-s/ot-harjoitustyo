@@ -57,14 +57,14 @@ class FabricSearchView:
 
         washed_values = (("n/a", -1), ("no", 0), ("yes", 1))
         for value in washed_values:
-            r = ttk.Radiobutton(
+            rad = ttk.Radiobutton(
                 frame,
                 text=value[0],
                 value=value[1],
                 variable=self._search_washed_var
             )
 
-            r.grid(row=2, column=value[1]+2, )
+            rad.grid(row=2, column=value[1]+2, )
 
         search_button = ttk.Button(
             frame, text="search", command=self._update_fabric_list)

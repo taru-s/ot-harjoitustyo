@@ -5,7 +5,7 @@ from database_connection import get_database_connection
 
 
 class FabricService:
-    """A class for wrapping and handling fabric database.
+    """A class for handling fabric application logic.
 
     """
 
@@ -71,7 +71,7 @@ class FabricService:
             return None
         return fabric_ids
 
-    def get_fabric_by_washed(self, washed: int):
+    def get_fabrics_by_washed(self, washed: int):
         """Gets fabrics with the given washed status.
 
         Args:
@@ -80,10 +80,38 @@ class FabricService:
         Returns:
             list: Returns a list of the ids of fabrics with the given washed status.
         """
-        fabric_ids = self._repository.get_fabric_by_washed(washed)
+        fabric_ids = self._repository.get_fabrics_by_washed(washed)
         if not fabric_ids:
             return None
         return fabric_ids
+
+    def search_fabrics(self, name_contains: str, washed: int) -> list:
+        """Searches for fabrics according to name and washed status.
+
+        Name has to contain the string arg name_contains. Is empty, name can be anything.
+        Washed status has to match the int arg washed. If washed = -1, washed status can be anything.
+
+        Args:
+            name_contains (str): name has to contain this string
+            washed (int): washed status 1=washed, 0=not washed, -1=not included in search
+
+        Returns:
+            list: List of the fabric ids of fabrics matching the search criteria.
+                    Returns None if no matches found.
+        """
+        if washed == -1:
+            return self.get_fabrics_by_name(name_contains)
+        elif not name_contains:
+            return self.get_fabrics_by_washed(washed)
+        else:
+            matching = []
+            for id in self.get_fabrics_by_name(name_contains):
+                if self.get_fabric_by_id(id).washed == washed:
+                    matching.append(id)
+            if not matching:
+                return None
+            return matching
+
 
     def get_fabric_by_id(self, fabric_id: int) -> Fabric:
         """Returns the Fabric matching the given id from the database.
